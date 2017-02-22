@@ -11,13 +11,13 @@ name=Hotspot Analysis
 qgisMinimumVersion=2.0
 description=This plugin implement statistics needed for Hotspot Analysis
 version=0.1
-author=Stanly Shaji, Arunkumar, Daniele Oxoli, Mayra Zurbaràn / Politecnico Di Milano 
-email=stanly.shaji@mail.polimi.it, daniele.oxoli@polimi.it
+author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano 
+email=daniele.oxoli@polimi.it
 
 about= The Plugin implements Getis-Ord Gi* local statistic to perform Hotspot analysis. The plugin requires Scipy and Numpy (see repository for installation) 
 
-tracker=https://github.com/stanly3690/HotSpotAnalysis_Plugin/issues
-repository=https://github.com/stanly3690/HotSpotAnalysis_Plugin.git
+tracker=https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues
+repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 # End of mandatory metadata
 
 # Recommended items:
@@ -28,8 +28,8 @@ repository=https://github.com/stanly3690/HotSpotAnalysis_Plugin.git
 # Tags are comma separated with spaces allowed
 tags= hotspot, python, ESDA, vector, points 
 
-homepage=https://github.com/stanly3690
-category=Plugins
+homepage=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
+category=Vector
 icon=icon.png
 # experimental flag
 experimental=True
