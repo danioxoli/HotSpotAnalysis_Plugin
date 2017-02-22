@@ -55,7 +55,7 @@ Change the directory to where the downloaded packages are stored and type the fo
 ```
 
 3) Download or clone the `GitHub` repository given below into QGIS Python Plugins folder:
-https://github.com/stanly3690/HotSpotAnalysis_Plugin/archive/master.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
 **Note**: default Plugins folder is:
 ```sh
@@ -113,7 +113,7 @@ Open the folder:
  $ open . 
 ``` 
 **Download and copy** here the unzipped repository folder (suggested):
-https://github.com/stanly3690/HotSpotAnalysis_Plugin/archive/master.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
 or Clone the `GitHub` repository into the earlier mentioned path:
 ```sh
@@ -129,7 +129,7 @@ ___
 
 ### Additional Material and Annuncements
 
-A demo exercise with the new plugin version here: https://github.com/stanly3690/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
+A demo exercise with the new plugin version here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
 
 An example of plugin application is available here: https://peerj.com/preprints/2204/
 
