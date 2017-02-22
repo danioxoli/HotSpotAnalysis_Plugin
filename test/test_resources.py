@@ -8,9 +8,9 @@
 
 """
 
-__author__ = 'stanly.shaji@mail.polimi.it'
-__date__ = '2016-06-19'
-__copyright__ = 'Copyright 2016, Stanly Shaji, Arunkumar / Politecnico Di Milano'
+__author__ = 'daniele.oxoli@polimi.it'
+__date__ = '2017-02-22'
+__copyright__ = 'Copyright 2017, Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano'
 
 import unittest
 

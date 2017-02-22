@@ -3,11 +3,11 @@
 /***************************************************************************
  HotspotAnalysis
                                  A QGIS plugin
- This plugin generates data needed for hotspot Analysis
+ This plugin implements the statistics needed for the Hotspot Analysis
                              -------------------
-        begin                : 2016-06-19
-        copyright            : (C) 2016 by Stanly Shaji, Arunkumar / Politecnico Di Milano
-        email                : stanly.shaji@mail.polimi.it
+        begin                : 2017-02-22
+        copyright            : (C) 2017 by Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
+        email                : daniele.oxoli@polimi.it
         git sha              : $Format:%H$
  ***************************************************************************/
 

@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'HotspotAnalysis'
-copyright = u'2013, Stanly Shaji, Arunkumar / Politecnico Di Milano'
+copyright = u'2013, Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -179,7 +179,7 @@ htmlhelp_basename = 'TemplateClassdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'HotspotAnalysis.tex', u'HotspotAnalysis Documentation',
-   u'Stanly Shaji, Arunkumar / Politecnico Di Milano', 'manual'),
+   u'Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -212,5 +212,5 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'TemplateClass', u'HotspotAnalysis Documentation',
-     [u'Stanly Shaji, Arunkumar / Politecnico Di Milano'], 1)
+     [u'Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano'], 1)
 ]

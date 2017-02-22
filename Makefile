@@ -1,12 +1,12 @@
 #/***************************************************************************
 # HotspotAnalysis
 #
-# This plugin generates data needed for hotspot Analysis
+# This plugin implements the statistics needed for the Hotspot Analysis
 #							 -------------------
-#		begin				: 2016-06-19
+#		begin				: 2017-02-22
 #		git sha				: $Format:%H$
-#		copyright			: (C) 2016 by Stanly Shaji, Arunkumar / Politecnico Di Milano
-#		email				: stanly.shaji@mail.polimi.it
+#		copyright			: (C) 2017 by Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
+#		email				: daniele.oxoli@polimi.it
 # ***************************************************************************/
 #
 #/***************************************************************************
@@ -49,6 +49,8 @@ PY_FILES = \
 UI_FILES = hotspot_analysis_dialog_base.ui
 
 EXTRAS = metadata.txt icon.png
+
+EXTRA_DIRS =
 
 COMPILED_RESOURCE_FILES = resources.py
 
@@ -110,6 +112,9 @@ deploy: compile doc transcompile
 	cp -vf $(EXTRAS) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vfr i18n $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vfr $(HELP) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/help
+	# Copy extra directories if any
+  # (temporarily removed)
+
 
 # The dclean target removes compiled python files from plugin directory
 # also deletes any .git entry

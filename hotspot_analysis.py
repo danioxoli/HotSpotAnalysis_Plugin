@@ -25,7 +25,6 @@ from PyQt4.QtGui import QAction, QIcon, QFileDialog, QComboBox, QFrame, QLineEdi
 from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
 # Initialize Qt resources from file resources.py
 import resources
-import resources_rc
 # Import the code for the dialog
 from hotspot_analysis_dialog import HotspotAnalysisDialog
 import os.path
@@ -176,7 +175,7 @@ class HotspotAnalysis:
             self.toolbar.addAction(action)
 
         if add_to_menu:
-            self.iface.addPluginToMenu(
+            self.iface.addPluginToVectorMenu(
                 self.menu,
                 action)
 
@@ -190,14 +189,14 @@ class HotspotAnalysis:
         icon_path = ':/plugins/HotspotAnalysis/icon.png'
         self.add_action(
             icon_path,
-            text=self.tr(u'Generate Data for Hotspot Analysis'),
+            text=self.tr(u'Hotspot Analysis'),
             callback=self.run,
             parent=self.iface.mainWindow())
 
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
-            self.iface.removePluginMenu(
+            self.iface.removePluginMenuVectorMenu(
                 self.tr(u'&Hotspot Analysis'),
                 action)
             self.iface.removeToolBarIcon(action)
