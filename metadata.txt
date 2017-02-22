@@ -11,7 +11,7 @@ name=Hotspot Analysis
 qgisMinimumVersion=2.0
 description=This plugin implements the statistics needed for the Hotspot Analysis
 version=0.1
-author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
+author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
 email=daniele.oxoli@polimi.it
 
 about=The Plugin implements Getis-Ord Gi* local statistic to perform the Hotspot analysis. The plugin requires Scipy and Numpy (see repository for installation instruction)
