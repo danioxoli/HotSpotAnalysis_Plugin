@@ -3,14 +3,13 @@
 /***************************************************************************
  HotspotAnalysis
                                  A QGIS plugin
- This plugin generates data needed for hotspot Analysis
-                              -------------------
-        begin                : 2016-06-19
+ This plugin implements the statistics needed for the Hotspot Analysis
+                             -------------------
+        begin                : 2017-02-22
+        copyright            : (C) 2017 by Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
+        email                : daniele.oxoli@polimi.it
         git sha              : $Format:%H$
-        copyright            : (C) 2016 by Stanly Shaji, Arunkumar / Politecnico Di Milano
-        email                : stanly.shaji@mail.polimi.it
  ***************************************************************************/
-
 /***************************************************************************
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -196,7 +195,7 @@ class HotspotAnalysis:
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
-            self.iface.removePluginMenuVectorMenu(
+            self.iface.removePluginVectorMenu(
                 self.tr(u'&Hotspot Analysis'),
                 action)
             self.iface.removeToolBarIcon(action)
