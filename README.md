@@ -144,7 +144,7 @@ or **Clone** the `GitHub` repository into the earlier mentioned path:
 
 ___
 
-### Additional Material and Annuncements
+### Additional Material 
 
 A demo exercise with the new plugin version here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
 
@@ -158,7 +158,15 @@ Presentation slides are available here: https://www.slideshare.net/mobile/daniel
 
 **Note**: this material is based on the **old version of the plugin**! 
 
-Latest presentation available here: 
+Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotspot-analysis-with-qgis-foss4git-2017
+
+___
+
+### Annuncements
+
+#####Annuncement 02/2017
+- The plugin has been **officially published** on the QGIS plugin repository
+- Minor bub fixed
 
 #####Annuncement 01/2017
 - Enabled the use of negative numerical attributes [Getis and Ord, 1996] 
