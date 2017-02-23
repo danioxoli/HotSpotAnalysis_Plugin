@@ -54,19 +54,22 @@ Change the directory to where the downloaded packages are stored and type the fo
  $ pip install pysal
 ```
 
-3) Download or clone the `GitHub` repository given below into QGIS Python Plugins folder:
+3) Open QGIS:
+
+Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
+
+In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
+A new icon for Hotspot Analysis will appear on the QGIS main panel.
+
+4) If you are interested in the latest unreleased version:
+
+Download or clone the `GitHub` repository given below into QGIS Python Plugins folder:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
 **Note**: default Plugins folder is:
 ```sh
  $ cd C:\Users\<your_user_name>\.qgis2\python\plugins
 ``` 
-4) Open QGIS:
-
-Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
-
-In `All plugins` tab, look for `HotSpotAnalysis` and tick the checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel.
 ___
 ### Installation - Ubuntu
 
