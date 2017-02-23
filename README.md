@@ -134,7 +134,7 @@ Open the folder:
 ```sh
  $ open . 
 ``` 
-**Download and copy** here the unzipped repository folder (suggested):
+**Download and copy** here the unzipped repository folder:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
 or **Clone** the `GitHub` repository into the earlier mentioned path:
