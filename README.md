@@ -187,7 +187,8 @@ ___
 ###Future work
 
  - Introduce Local Moran's I and Bivariate Local Moran's I computation
- - Update User guide 
+ - Update User guide and documentation
+ - Create a new brench of the sotware without extenal QGIS dependnecies
  
 ___
 
