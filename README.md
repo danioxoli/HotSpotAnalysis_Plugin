@@ -188,7 +188,7 @@ ___
 
  - Introduce Local Moran's I and Bivariate Local Moran's I computation
  - Update User guide and documentation
- - Create a new brench of the sotware without extenal QGIS dependnecies
+ - Create a new brench of the sotware without extenal Python dependnecies
  
 ___
 
