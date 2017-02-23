@@ -166,7 +166,7 @@ ___
 
 #####Annuncement 02/2017
 - The plugin has been **officially published** on the QGIS plugin repository
-- Minor bub fixed
+- Minor bugs fixed
 
 #####Annuncement 01/2017
 - Enabled the use of negative numerical attributes [Getis and Ord, 1996] 
