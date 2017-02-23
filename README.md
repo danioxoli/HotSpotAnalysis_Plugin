@@ -59,11 +59,11 @@ Change the directory to where the downloaded packages are stored and type the fo
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel.
+A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
 4) If you are interested in the **latest unreleased version**:
 
-Download or clone the `GitHub` repository given below into QGIS Python Plugins folder:
+**Download or clone** the `GitHub` repository given below into QGIS Python Plugins folder:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
 **Note**: default Plugins folder is:
@@ -88,7 +88,7 @@ To install **PySAL**:
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel.
+A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
 3) If you are interested in the **latest unreleased version**:
 
@@ -96,9 +96,9 @@ Open a **Terminal** and change directory to QGIS Plugins directory, default is:
 ```sh
  $ cd /usr/share/qgis/python/plugins 
 ``` 
-Clone the `GitHub` repository into the earlier mentioned path:
+**Clone** the `GitHub` repository into the earlier mentioned path:
 ```sh
- $  sudo git clone https://github.com/stanly3690/HotSpotAnalysis_Plugin 
+ $  sudo git clone https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
 ___
@@ -108,7 +108,9 @@ ___
 
 If you installed QGIS on your machine using this source : http://www.kyngchaos.com/software/qgis , you would find the required dependencies (**Numpy - Scipy - Pysal**) in the list of the **Optional Python Modules**. You can install them directly from here: http://www.kyngchaos.com/software/python (strongly suggested)
 
-Otherwise, open a **Terminal** and type the commands:
+####Alternatively:
+
+Open a **Terminal** and type the commands:
 ```sh
  $ sudo pip install numpy
  $ sudo pip install scipy 
@@ -119,8 +121,8 @@ Otherwise, open a **Terminal** and type the commands:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
-In `All plugins` tab, look for `HotSpotAnalysis` and tick the Checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel.
+In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
+A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
 3) If you are interested in the **latest unreleased version**:
 
@@ -135,9 +137,9 @@ Open the folder:
 **Download and copy** here the unzipped repository folder (suggested):
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 
-or Clone the `GitHub` repository into the earlier mentioned path:
+or **Clone** the `GitHub` repository into the earlier mentioned path:
 ```sh
- $  sudo git clone https://github.com/stanly3690/HotSpotAnalysis_Plugin 
+ $  sudo git clone https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
 ___
