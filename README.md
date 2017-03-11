@@ -15,6 +15,8 @@ Dependency Requirements:
   - **`Scipy`**
   
 These libraries are not included in the QGIS core libraries and must be installed prior to the use of the plugin through the [OSGeo4W Shell] on **Windows**, or through terminal on **Ubuntu** and **macOS** (see the following).
+
+**Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the offcial **QGIS Python Plugins Repository**._
 ___
 ### Installation - Windows OS
 
@@ -206,4 +208,5 @@ E-mail: daniele.oxoli@polimi.it
  [Getis and Ord, 1992]: <http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1992.tb00261.x/full>
  [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]: <http://www.spatialanalysisonline.com/HTML/index.html?local_indicators_of_spatial_as.htm>
  [OSGeo4W Shell]:<http://trac.osgeo.org/osgeo4w/>
+ [OSGeo-Live]:<https://live.osgeo.org>
  [Getis and Ord, 1996]: <http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00912.x/pdf>
