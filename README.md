@@ -166,6 +166,10 @@ ___
 
 ### Annuncements
 
+#####Annuncement 03/2017
+- Enabled Anselin Local Moran's I and Bivariate Local Moran computation
+- Minor bugs fixed
+
 #####Annuncement 02/2017
 - The plugin has been **officially published** on the QGIS plugin repository
 - Minor bugs fixed
@@ -188,8 +192,9 @@ The current version does not require Pyshp as well as to specify the feature coo
 ___
 ###Future work
 
- - Introduce Local Moran's I and Bivariate Local Moran's I computation
- - Update User guide and documentation
+ - Test on the new functionalities addedd
+ - improve GUI appereance
+ - Update User guide and documentation for Anselin Local Moran's I and Bivariate Local Moran computation
  - Create a new branch of the sotware without external Python dependnecies
  
 ___
