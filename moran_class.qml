@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.14.3-Essen" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.14.3-Essen" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="ID">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -29,7 +29,7 @@
       <rule description="Low-High" filter="&quot;q-value&quot; = 2 AND &quot;p-value&quot; &lt; 0.05" key="{13a211f7-5f96-4f21-99f8-5d1fac094af7}" symbol="1" label="LH"/>
       <rule description="High-Low" filter="&quot;q-value&quot; = 4 AND &quot;p-value&quot; &lt; 0.05" key="{a7fba2bd-4ce9-44c9-b88f-eed30da26512}" symbol="2" label="HL"/>
       <rule description="Low-Low" filter="&quot;q-value&quot; = 3 AND &quot;p-value&quot; &lt; 0.05" key="{39b93520-6359-455a-8267-164513579e35}" symbol="3" label="LL"/>
-      <rule filter="&quot;p-value&quot; > 0.05" key="{35437084-26bc-4d27-a0f0-7f2a28f3f606}" symbol="4" label="Not_significant(95%)"/>
+      <rule filter="&quot;p-value&quot; > 0.05" key="{35437084-26bc-4d27-a0f0-7f2a28f3f606}" symbol="4" label="Not Significant (95%)"/>
     </rules>
     <symbols>
       <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
