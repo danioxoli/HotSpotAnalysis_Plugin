@@ -22,6 +22,12 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -41,6 +47,12 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
@@ -51,6 +63,12 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -60,6 +78,12 @@
      <width>181</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Select the attribute field:</string>
@@ -74,6 +98,12 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Output Shapefile:</string>
    </property>
@@ -86,6 +116,12 @@
      <width>161</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Fixed Distance band:</string>
@@ -100,6 +136,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Browse</string>
    </property>
@@ -113,6 +155,12 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QCheckBox" name="checkBox_optimizeDistance">
    <property name="enabled">
@@ -125,6 +173,12 @@
      <width>211</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
@@ -142,6 +196,12 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Select the input layer:</string>
    </property>
@@ -155,6 +215,12 @@
      <height>71</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string/>
    </property>
@@ -166,6 +232,12 @@
       <width>91</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Min Distance:</string>
@@ -180,6 +252,12 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
@@ -189,6 +267,12 @@
       <width>101</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Max Distance:</string>
@@ -203,6 +287,12 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Distance Step:</string>
     </property>
@@ -216,6 +306,12 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_maxT">
     <property name="geometry">
@@ -225,6 +321,12 @@
       <width>71</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
    </widget>
   </widget>
@@ -236,6 +338,12 @@
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -249,6 +357,7 @@
    </property>
    <property name="font">
     <font>
+     <family>Arial</family>
      <pointsize>9</pointsize>
      <weight>50</weight>
      <italic>false</italic>
@@ -262,11 +371,17 @@
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>0</x>
      <y>270</y>
-     <width>411</width>
-     <height>16</height>
+     <width>431</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -275,11 +390,17 @@
   <widget class="Line" name="line_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>0</x>
      <y>370</y>
-     <width>411</width>
-     <height>16</height>
+     <width>431</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -288,11 +409,17 @@
   <widget class="Line" name="line_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>0</x>
      <y>470</y>
-     <width>411</width>
-     <height>16</height>
+     <width>431</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -307,6 +434,12 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Use row standardized spatial weights</string>
    </property>
@@ -319,6 +452,12 @@
      <width>271</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Use random permutations</string>
@@ -336,6 +475,12 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Use Queen's case contiguity matrix</string>
    </property>
@@ -343,11 +488,17 @@
   <widget class="Line" name="line_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>0</x>
      <y>400</y>
-     <width>411</width>
-     <height>16</height>
+     <width>431</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -365,6 +516,12 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>999</string>
    </property>
@@ -377,6 +534,12 @@
      <width>181</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Select the attribute field:</string>
@@ -393,6 +556,12 @@
      <width>121</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
@@ -454,16 +623,17 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>111</width>
+      <width>151</width>
       <height>20</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -475,16 +645,17 @@
      <rect>
       <x>160</x>
       <y>10</y>
-      <width>91</width>
+      <width>121</width>
       <height>17</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -502,10 +673,11 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
