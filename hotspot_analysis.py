@@ -30,6 +30,7 @@ import os.path
 
 import pysal
 from pysal.esda.getisord import *
+from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
 from pysal.weights.util import get_points_array_from_shapefile
 
@@ -241,12 +242,20 @@ class HotspotAnalysis:
         else:
             self.dlg.lineEdit_random.setEnabled(False)
 
+    def moranBi(self, checked):
+        if checked == True:
+            self.dlg.comboBox_C_2.setEnabled(True)
+        else:
+            self.dlg.comboBox_C_2.setEnabled(False)
+
     def clear_ui(self):
         """Clearing the UI for new operations"""
         self.dlg.comboBox.clear()
         self.dlg.lineEdit.clear()
         self.dlg.lineEditThreshold.clear()
         self.dlg.comboBox_C.clear()
+        self.dlg.comboBox_C_2.clear()
+        self.dlg.comboBox_C_2.setEnabled(False)
         self.dlg.lineEditThreshold.setEnabled(True)
         self.dlg.checkBox_optimizeDistance.setChecked(False)
         self.dlg.checkBox_rowStandard.setChecked(False)
@@ -266,8 +275,9 @@ class HotspotAnalysis:
     def clear_fields(self):
         """Clearing the fields when layers are changed"""
         self.dlg.comboBox_C.clear()
+        self.dlg.comboBox_C_2.clear()
 
-    def write_file(self, filename, sf, lg_star, field_C, C, layerName, inLayer, inDataSource, y, threshold1):
+    def write_file(self, filename, statistics, layerName, inLayer, inDataSource, y, threshold1):
         """Writing the output shapefile into the mentioned directory"""
         outDriver = ogr.GetDriverByName("ESRI Shapefile")
 
@@ -306,6 +316,14 @@ class HotspotAnalysis:
         p_field.SetPrecision(10)
         outLayer.CreateField(p_field)
 
+        # if not Gi*
+        if (self.dlg.checkBox_moran.isChecked() == 1 or self.dlg.checkBox_moranBi.isChecked() == 1):
+            intValue = int(ogr.OFTReal)
+            q_field = ogr.FieldDefn("q-value", intValue)
+            q_field.SetWidth(15)
+            q_field.SetPrecision(10)
+            outLayer.CreateField(q_field)
+
         # Get the output Layer's Feature Definition
         outLayerDefn = outLayer.GetLayerDefn()
         # Get the input Layer's Feature Definition
@@ -324,23 +342,45 @@ class HotspotAnalysis:
             geom = inFeature.GetGeometryRef()
             outFeature.SetGeometry(geom)
 
-            # Add Z-scores and p-values to their field column
-            if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                if min(y) >= 0:
-                    outFeature.SetField("Z-score", lg_star.z_sim[i])
-                    outFeature.SetField("p-value", lg_star.p_z_sim[i] * 2)
-                else:
-                    outFeature.SetField("Z-score", -lg_star.z_sim[i])
-                    outFeature.SetField("p-value", lg_star.p_z_sim[i] * 2)
+            if self.dlg.checkBox_gi.isChecked() == 1:
+                # Add Z-scores and p-values to their field column
+                if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
+                    if min(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
+                    else:
+                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
 
-            else:  # to use normality hypothesis
+                else:  # to use normality hypothesis
 
-                if min(y) >= 0:
-                    outFeature.SetField("Z-score", lg_star.Zs[i])
-                    outFeature.SetField("p-value", lg_star.p_norm[i] * 2)
-                else:
-                    outFeature.SetField("Z-score", -lg_star.Zs[i])
-                    outFeature.SetField("p-value", lg_star.p_norm[i] * 2)
+                    if min(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.Zs[i])
+                        outFeature.SetField("p-value", statistics.p_norm[i] * 2)
+                    else:
+                        outFeature.SetField("Z-score", -statistics.Zs[i])
+                        outFeature.SetField("p-value", statistics.p_norm[i] * 2)
+
+            else:
+
+                if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
+                    if min(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_sim[i] * 2)
+                    else:
+                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_sim[i] * 2)
+
+                else:  # to use normality hypothesis
+
+                    if min(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
+                    else:
+                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
+                outFeature.SetField("q-value", statistics.q[i])
+
             # Add new feature to output Layer
             outLayer.CreateFeature(outFeature)
 
@@ -371,6 +411,7 @@ class HotspotAnalysis:
 
         self.clear_fields()
         self.dlg.comboBox_C.addItems(fieldnames)
+        self.dlg.comboBox_C_2.addItems(fieldnames)
         (path, layer_id) = selectedLayer.dataProvider().dataSourceUri().split('|')
 
         inDriver = ogr.GetDriverByName("ESRI Shapefile")
@@ -452,12 +493,13 @@ class HotspotAnalysis:
             fieldnames = [field.name() for field in selectedLayer.pendingFields()]  # fetching fieldnames of layer
             self.clear_fields()
             self.dlg.comboBox_C.addItems(fieldnames)
+            self.dlg.comboBox_C_2.addItems(fieldnames)
             try:
                 self.dlg.comboBox.activated.connect(lambda: self.load_comboBox(layers_shp))
                 self.dlg.comboBox.currentIndexChanged.connect(lambda: self.load_comboBox(layers_shp))
                 self.dlg.checkBox_optimizeDistance.toggled.connect(self.optimizedThreshold)  # checkbox toggle event
                 self.dlg.checkBox_randomPerm.toggled.connect(self.randomPerm)  # checkbox toggle event
-
+                self.dlg.checkBox_moranBi.toggled.connect(self.moranBi)  # checkbox toggle event
                 self.load_comboBox(layers_shp)
             except:
                 return
@@ -474,6 +516,7 @@ class HotspotAnalysis:
                 selectedLayer = layers_shp[selectedLayerIndex]
                 layerName = selectedLayer.dataProvider().dataSourceUri()
                 C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
+                C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
                 filename = self.dlg.lineEdit.text()
                 (path, layer_id) = layerName.split('|')
 
@@ -488,6 +531,13 @@ class HotspotAnalysis:
                     u.append(geometry.GetField(C))
 
                 y = numpy.array(u)  # attributes vector
+
+                if self.dlg.checkBox_moranBi.isChecked() == 1:
+                    v = []
+                    for i in range(0, inLayer.GetFeatureCount()):
+                        geometry = inLayer.GetFeature(i)
+                        v.append(geometry.GetField(C2))
+                    x = numpy.array(v)
 
                 if type == 1:  # point
                     t = get_points_array_from_shapefile(myfilepath.split("|")[0])
@@ -523,17 +573,30 @@ class HotspotAnalysis:
                     permutationsValue = 999
 
                 numpy.random.seed(12345)
-                lg_star = G_Local(y, w, star=True, transform=type_w, permutations=permutationsValue)
 
-                self.write_file(filename, inLayer, lg_star, self.dlg.comboBox_C.currentText(), C, layerName, inLayer,
+                if self.dlg.checkBox_gi.isChecked() == 1:
+                    statistics = G_Local(y, w, star=True, transform=type_w, permutations=permutationsValue)
+                elif self.dlg.checkBox_moran.isChecked() == 1:
+                    statistics = Moran_Local(y, w, transformation=type_w, permutations=permutationsValue)
+                else:
+                    statistics = Moran_Local_BV(y, x, w, transformation=type_w, permutations=permutationsValue)
+
+                self.write_file(filename, statistics, layerName, inLayer,
                                 inDataSource,
                                 y, threshold1)
                 # assign the style to the output layer on QGIS
-                if type == 1:  # point
-                    stylePath = "/hotspots_class.qml"
+                if self.dlg.checkBox_gi.isChecked() == 1:
+                    if type == 1:  # point
+                        stylePath = "/hotspots_class.qml"
+                    else:
+                        stylePath = "/hotspots_class_poly.qml"
+                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
                 else:
-                    stylePath = "/hotspots_class_poly.qml"
-                self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
+                    if type == 1:  # point
+                        stylePath = "/moran_class.qml"
+                    else:
+                        stylePath = "/moran_class_poly.qml"
+                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)                
 
             elif result and (self.validator() == 0):
                 self.error_msg()
