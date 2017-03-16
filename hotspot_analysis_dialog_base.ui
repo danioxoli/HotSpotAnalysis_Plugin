@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>447</width>
+    <width>433</width>
     <height>577</height>
    </rect>
   </property>
@@ -314,7 +314,7 @@
   <widget class="QCheckBox" name="checkBox_randomPerm">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>40</x>
      <y>440</y>
      <width>271</width>
      <height>22</height>
@@ -359,7 +359,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>320</x>
      <y>440</y>
      <width>81</width>
      <height>20</height>
@@ -400,7 +400,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>431</width>
+     <width>411</width>
      <height>61</height>
     </rect>
    </property>
@@ -426,7 +426,7 @@
       <x>330</x>
       <y>30</y>
       <width>21</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -452,9 +452,9 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>10</y>
-      <width>141</width>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
@@ -473,9 +473,9 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>160</x>
       <y>10</y>
-      <width>111</width>
+      <width>91</width>
       <height>17</height>
      </rect>
     </property>
@@ -494,9 +494,9 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>280</x>
       <y>10</y>
-      <width>161</width>
+      <width>131</width>
       <height>17</height>
      </rect>
     </property>
