@@ -25,7 +25,7 @@ ___
  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
  $ python get-pip.py
 ```
-####Alternatively:
+Alternatively:
 
 Download `get-pip.py` , to enable `PIP` functionalities, which is available at this link: <https://bootstrap.pypa.io/get-pip.py> 
 
@@ -110,7 +110,7 @@ ___
 
 If you installed QGIS on your machine using this source : http://www.kyngchaos.com/software/qgis , you would find the required dependencies (**Numpy - Scipy - Pysal**) in the list of the **Optional Python Modules**. You can install them directly from here: http://www.kyngchaos.com/software/python 
 
-####Alternatively:
+Alternatively:
 
 Open a **Terminal** and type the commands:
 ```sh
