@@ -2,9 +2,9 @@
 
 A QGIS Plugin to perform Hotspot analysis based on the Python Spatial Analysis Library - [PySAL]. 
 
-The Hotspot analysis plugin associates the **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]) for each feature of shapefile, with an assigned **projected coordinate system** and an associated **numerical attribute**. Output layer allows to indentify hotspots (or coldspots) in the input dataset as well as their statistical significance. 
+The Hotspot analysis plugin associates the **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]), Anselin Local Moran's I ([Anselin, 1995]) and Local Moran Bivariate ([Wartenberg, 1985]; [Anselin et al., 2002]) for each feature of shapefile, with an assigned **projected coordinate system** and an associated **numerical attributes**. Output layer allows to indentify hotspots (or coldspots) in the input dataset as well as their statistical significance. 
 
-Positive and statistically significant Z-score indicates intense cluster of high values (hotspot). Negative and statistically significant Z-score indicates intense cluster of low values (coldspot).
+Positive and statistically significant Z-score indicates intense cluster of high values (hotspot). Negative and statistically significant Z-score indicates intense cluster of low values (coldspot). Gi*, Local Moran's I and Bivariate Local Moran have different interpretation, please consider the aforementioned litterature references for detailed information.
 
 Spatial relation between features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile), which allows to compute Gi* for any element by considering its neighborhoods within this fixed distance. For polygon shapefile analysis the spatial relation is modeled using queen's case contiguity matrix. For more information, please refer to: [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
 
@@ -215,3 +215,6 @@ E-mail: daniele.oxoli@polimi.it
  [OSGeo4W Shell]:<http://trac.osgeo.org/osgeo4w/>
  [OSGeo-Live]:<https://live.osgeo.org>
  [Getis and Ord, 1996]: <http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00912.x/pdf>
+ [Anselin, 1995]: <http://onlinelibrary.wiley.com/store/10.1111/j.1538-4632.1995.tb00338.x/asset/j.1538-4632.1995.tb00338.x.pdf;jsessionid=A8B95BCA3E3DAFED243732CC66B31B63.f02t01?v=1&t=j0hvb8t7&s=c3f30861dca953c035e5b1dbbc24ea6b659a82c5>
+ [Wartenberg, 1985]:<http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1985.tb00849.x/full>
+ [Anselin et al., 2002]:<https://pdfs.semanticscholar.org/4e34/bd70317377971ba8df7259288b972ad6a239.pdf>
