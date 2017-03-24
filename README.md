@@ -27,7 +27,7 @@ ___
  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
  $ python get-pip.py
 ```
-Alternatively:
+#### Alternatively:
 
 Download `get-pip.py` , to enable `PIP` functionalities, which is available at this link: <https://bootstrap.pypa.io/get-pip.py> 
 
@@ -168,31 +168,31 @@ ___
 
 ### Annuncements
 
-#####Annuncement 03/2017
+##### Annuncement 03/2017
 - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
 - Minor bugs fixed
 
-#####Annuncement 02/2017
+##### Annuncement 02/2017
 - The plugin has been **officially published** on the QGIS plugin repository
 - Minor bugs fixed
 
-#####Annuncement 01/2017
+##### Annuncement 01/2017
 - Enabled the use of negative numerical attributes [Getis and Ord, 1996] 
 - Enabled polygon shapefiles as input using queen's case contiguity spatial weight matrix. 
 - Enabled the possibility of selecting between normality assumption (default) and standard normal approximation from permutations to compute Gi* Z-scores and associated p-values. 
 
-#####Annuncement 12/2016
+##### Annuncement 12/2016
 New check botton to eneable the usage of **row standardized** spatial weights
 
-#####Annuncement 11/2016
+##### Annuncement 11/2016
 With this new version, the output layer is displayed with an **automatic style** which enables hotspot and coldspot visualization. Moreover, a **default Fixed Distance Band** is dispalyed. This latter represents the minimum distance to ensure 
 at least 1 neighbor to any element of the dataset in order to compute spatial weights for Gi* 
 
-#####Annuncement 10/2016
+##### Annuncement 10/2016
 The current version does not require Pyshp as well as to specify the feature coordinates as two separate fields in the attribute table of the input shapefile. Only the numerical attribute must be included and selected using the graphical interface on QGIS. Nevertheless, be sure that your input shapefile is projected. The unit of measure in which you express the analysis distance must agree with the one of the projected coordinate system of your input layer. 
 
 ___
-###Future work
+### Future work
 
  - Test on the new functionalities addedd
  - improve GUI appereance
