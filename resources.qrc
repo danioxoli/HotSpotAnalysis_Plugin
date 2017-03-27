@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/plugins/HotspotAnalysis" >
-        <file>icon.png</file>
+        <file>hotspot.png</file>
     </qresource>
 </RCC>

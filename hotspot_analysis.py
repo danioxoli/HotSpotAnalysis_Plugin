@@ -186,7 +186,7 @@ class HotspotAnalysis:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/HotspotAnalysis/icon.png'
+        icon_path = ':/plugins/HotspotAnalysis/hotspot.png'
         self.add_action(
             icon_path,
             text=self.tr(u'Hotspot Analysis'),

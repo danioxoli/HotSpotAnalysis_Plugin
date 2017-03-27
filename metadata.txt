@@ -31,7 +31,7 @@ tags=hotspot, Python, ESDA, vector
 
 homepage=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 category=Vector
-icon=icon.png
+icon=hotspot.png
 # experimental flag
 experimental=True
 

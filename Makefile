@@ -48,7 +48,7 @@ PY_FILES = \
 
 UI_FILES = hotspot_analysis_dialog_base.ui
 
-EXTRAS = metadata.txt icon.png
+EXTRAS = metadata.txt hotspot.png
 
 EXTRA_DIRS =
 
