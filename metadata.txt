@@ -25,6 +25,7 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 # Uncomment the following line and add your changelog:
 changelog=0.2
     - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
+    - Fixed crashing while adding/removing layer from the QGIS layer list
 
 # Tags are comma separated with spaces allowed
 tags=hotspot, Python, ESDA, vector
