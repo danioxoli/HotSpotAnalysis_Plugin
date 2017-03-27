@@ -2,11 +2,13 @@
 
 A QGIS Plugin to perform Hotspot analysis based on the Python Spatial Analysis Library - [PySAL]. 
 
-The Hotspot analysis plugin associates the **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]) for each feature of shapefile, with an assigned **projected coordinate system** and an associated **numerical attribute**. Output layer allows to indentify hotspots (or coldspots) in the input dataset as well as their statistical significance. 
+The Hotspot analysis plugin associates the **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]), Anselin Local Moran's I ([Anselin, 1995]) and Local Moran Bivariate ([Wartenberg, 1985]; [Anselin et al., 2002]) for each feature of shapefile, with an assigned **projected coordinate system** and an associated **numerical attributes**. Output layer allows to indentify hotspots (or coldspots) in the input dataset as well as their statistical significance. 
 
-Positive and statistically significant Z-score indicates intense cluster of high values (hotspot). Negative and statistically significant Z-score indicates intense cluster of low values (coldspot).
+For what it concerns Gi* local statistic, positive and statistically significant Z-score indicates intense cluster of high values (hotspot). Negative and statistically significant Z-score indicates intense cluster of low values (coldspot). 
+Local Moran's I (and its bivariate counterpart, the Local Moran Bivariate) Z-scores are translated into quadrant values (q) which depict presence of Clusters or Outliers within the dataset. Significance is computed, based on user's choice, against normality assumption or permutations approach. 
+Please consider the aforementioned litterature references for detailed information.
 
-Spatial relation between features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile), which allows to compute Gi* for any element by considering its neighborhoods within this fixed distance. For polygon shapefile analysis the spatial relation is modeled using queen's case contiguity matrix. For more information, please refer to: [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
+Spatial relation between point features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile). For polygon shapefile analysis, the spatial relation is modeled using queen's case contiguity matrix. For more information, please refer to: [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
 
 Dependency Requirements:
 
@@ -25,7 +27,7 @@ ___
  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
  $ python get-pip.py
 ```
-####Alternatively:
+#### Alternatively:
 
 Download `get-pip.py` , to enable `PIP` functionalities, which is available at this link: <https://bootstrap.pypa.io/get-pip.py> 
 
@@ -110,7 +112,7 @@ ___
 
 If you installed QGIS on your machine using this source : http://www.kyngchaos.com/software/qgis , you would find the required dependencies (**Numpy - Scipy - Pysal**) in the list of the **Optional Python Modules**. You can install them directly from here: http://www.kyngchaos.com/software/python 
 
-####Alternatively:
+Alternatively:
 
 Open a **Terminal** and type the commands:
 ```sh
@@ -164,32 +166,37 @@ Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotsp
 
 ___
 
-### Annuncements
+### Changesets
 
-#####Annuncement 02/2017
+##### Changeset 03/2017
+- Enabled Anselin Local Moran's I and Bivariate Local Moran computation
+- Minor bugs fixed
+
+##### Changeset 02/2017
 - The plugin has been **officially published** on the QGIS plugin repository
 - Minor bugs fixed
 
-#####Annuncement 01/2017
+##### Changeset 01/2017
 - Enabled the use of negative numerical attributes [Getis and Ord, 1996] 
 - Enabled polygon shapefiles as input using queen's case contiguity spatial weight matrix. 
 - Enabled the possibility of selecting between normality assumption (default) and standard normal approximation from permutations to compute Gi* Z-scores and associated p-values. 
 
-#####Annuncement 12/2016
+##### Changeset 12/2016
 New check botton to eneable the usage of **row standardized** spatial weights
 
-#####Annuncement 11/2016
+##### Changeset 11/2016
 With this new version, the output layer is displayed with an **automatic style** which enables hotspot and coldspot visualization. Moreover, a **default Fixed Distance Band** is dispalyed. This latter represents the minimum distance to ensure 
 at least 1 neighbor to any element of the dataset in order to compute spatial weights for Gi* 
 
-#####Annuncement 10/2016
+##### Changeset 10/2016
 The current version does not require Pyshp as well as to specify the feature coordinates as two separate fields in the attribute table of the input shapefile. Only the numerical attribute must be included and selected using the graphical interface on QGIS. Nevertheless, be sure that your input shapefile is projected. The unit of measure in which you express the analysis distance must agree with the one of the projected coordinate system of your input layer. 
 
 ___
-###Future work
+### Future work
 
- - Introduce Local Moran's I and Bivariate Local Moran's I computation
- - Update User guide and documentation
+ - Test on the new functionalities addedd
+ - improve GUI appereance
+ - Update User guide and documentation for Anselin Local Moran's I and Bivariate Local Moran computation
  - Create a new branch of the sotware without external Python dependnecies
  
 ___
@@ -198,7 +205,7 @@ Bug tracker and Wiki
 
 ##### License
 
-_HotSpotAnalysis-plugin is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version_
+_HotSpotAnalysis-plugin is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation_
 
 Copyright © 2017 Daniele Oxoli/ Mayra Zurbaràn/ Gabriele Prestifilippo/ Stanly Shaji - Politecnico Di Milano.
 
@@ -210,3 +217,6 @@ E-mail: daniele.oxoli@polimi.it
  [OSGeo4W Shell]:<http://trac.osgeo.org/osgeo4w/>
  [OSGeo-Live]:<https://live.osgeo.org>
  [Getis and Ord, 1996]: <http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00912.x/pdf>
+ [Anselin, 1995]: <http://onlinelibrary.wiley.com/store/10.1111/j.1538-4632.1995.tb00338.x/asset/j.1538-4632.1995.tb00338.x.pdf;jsessionid=A8B95BCA3E3DAFED243732CC66B31B63.f02t01?v=1&t=j0hvb8t7&s=c3f30861dca953c035e5b1dbbc24ea6b659a82c5>
+ [Wartenberg, 1985]:<http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1985.tb00849.x/full>
+ [Anselin et al., 2002]:<https://pdfs.semanticscholar.org/4e34/bd70317377971ba8df7259288b972ad6a239.pdf>

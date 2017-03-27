@@ -9,12 +9,12 @@
 [general]
 name=Hotspot Analysis
 qgisMinimumVersion=2.0
-description=This plugin implements the statistics needed for the Hotspot Analysis
-version=0.1
+description=This plugin implements LISA statistics needed for Hotspot and Cluster Analysis
+version=0.2
 author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
 email=daniele.oxoli@polimi.it
 
-about=The Plugin implements Getis-Ord Gi* local statistic to perform the Hotspot analysis. Input data must be a shapefile of points or polygons with an associated projected coordinate system. The plugin requires Numpy, Scipy and Pysal (see repository for installation instruction)
+about=The Plugin implements Local Indicators of Spatial Association (LISA) statistics to perform the Hotspot (Getis-Ord Gi*) and Clusters (Moran's I) analysis and links them to maps. Input data must be a shapefile of points or polygons with an associated projected coordinate system and (at least) one numeric attribute. The plugin requires Numpy, Scipy and Pysal (see repository for installation instruction)
 
 tracker=https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues
 repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
@@ -23,7 +23,8 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
-# changelog=
+changelog=0.2
+    - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
 
 # Tags are comma separated with spaces allowed
 tags=hotspot, Python, ESDA, vector
