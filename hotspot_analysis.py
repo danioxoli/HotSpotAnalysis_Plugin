@@ -33,7 +33,6 @@ from pysal.esda.getisord import *
 from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
 from pysal.weights.util import get_points_array_from_shapefile
-
 import numpy
 import sys
 
@@ -395,15 +394,25 @@ class HotspotAnalysis:
             QMessageBox.information(self.dlg, self.tr("New Layer"), self.tr("Layer Cannot be Loaded"), QMessageBox.Ok)
         self.clear_ui()
 
-    def load_comboBox(self, layers):
+    def load_comboBox(self):
         """Load the fields into combobox when layers are changed"""
+
+        layer_shp = []
+        layers = self.iface.legendInterface().layers()
+        if len(layers) != 0:  # checklayers exist in the project
+            for layer in layers:
+                if hasattr(layer, "dataProvider"):  # to not consider Openlayers basemaps in the layer list
+                    myfilepath = layer.dataProvider().dataSourceUri()  # directory including filename
+                    (myDirectory, nameFile) = os.path.split(myfilepath)  # splitting into directory and filename
+                    if (".shp" in nameFile):
+                        layer_shp.append(layer)
 
         selectedLayerIndex = self.dlg.comboBox.currentIndex()
 
-        if selectedLayerIndex < 0 or selectedLayerIndex > len(layers):
+        if selectedLayerIndex < 0 or selectedLayerIndex > len(layer_shp):
             return
         try:
-            selectedLayer = layers[selectedLayerIndex]
+            selectedLayer = layer_shp[selectedLayerIndex]
         except:
             return
 
@@ -495,12 +504,11 @@ class HotspotAnalysis:
             self.dlg.comboBox_C.addItems(fieldnames)
             self.dlg.comboBox_C_2.addItems(fieldnames)
             try:
-                self.dlg.comboBox.activated.connect(lambda: self.load_comboBox(layers_shp))
-                self.dlg.comboBox.currentIndexChanged.connect(lambda: self.load_comboBox(layers_shp))
+                self.dlg.comboBox.activated.connect(lambda: self.load_comboBox())
+                self.dlg.comboBox.currentIndexChanged.connect(lambda: self.load_comboBox())
                 self.dlg.checkBox_optimizeDistance.toggled.connect(self.optimizedThreshold)  # checkbox toggle event
                 self.dlg.checkBox_randomPerm.toggled.connect(self.randomPerm)  # checkbox toggle event
                 self.dlg.checkBox_moranBi.toggled.connect(self.moranBi)  # checkbox toggle event
-                self.load_comboBox(layers_shp)
             except:
                 return
 
@@ -596,7 +604,7 @@ class HotspotAnalysis:
                         stylePath = "/moran_class.qml"
                     else:
                         stylePath = "/moran_class_poly.qml"
-                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)                
+                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
 
             elif result and (self.validator() == 0):
                 self.error_msg()
