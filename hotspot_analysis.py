@@ -595,15 +595,15 @@ class HotspotAnalysis:
                 # assign the style to the output layer on QGIS
                 if self.dlg.checkBox_gi.isChecked() == 1:
                     if type == 1:  # point
-                        stylePath = "/hotspots_class.qml"
+                        stylePath = "/layer_style/hotspots_class.qml"
                     else:
-                        stylePath = "/hotspots_class_poly.qml"
+                        stylePath = "/layer_style/hotspots_class_poly.qml"
                     self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
                 else:
                     if type == 1:  # point
-                        stylePath = "/moran_class.qml"
+                        stylePath = "/layer_style/moran_class.qml"
                     else:
-                        stylePath = "/moran_class_poly.qml"
+                        stylePath = "/layer_style/moran_class_poly.qml"
                     self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
 
             elif result and (self.validator() == 0):
