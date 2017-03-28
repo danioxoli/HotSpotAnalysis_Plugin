@@ -32,7 +32,7 @@ import pysal
 from pysal.esda.getisord import *
 from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
-from pysal.weights.util import get_points_array_from_shapefile
+#from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
 
@@ -548,7 +548,12 @@ class HotspotAnalysis:
                     x = numpy.array(v)
 
                 if type == 1:  # point
-                    t = get_points_array_from_shapefile(myfilepath.split("|")[0])
+                    t = ()
+                    for feature in inLayer:
+                        geometry = feature.GetGeometryRef()
+                        xy = (geometry.GetX(), geometry.GetY())
+                        t = t + (xy,)                    
+                    #t = get_points_array_from_shapefile(myfilepath.split("|")[0])
                     if self.dlg.checkBox_optimizeDistance.isChecked() == 0:  # if threshold is given
                         threshold1 = int(self.dlg.lineEditThreshold.text())
                     else:  # if user needs to optimize threshold
