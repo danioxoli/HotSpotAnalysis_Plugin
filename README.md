@@ -166,7 +166,7 @@ Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotsp
 
 ___
 
-### Changesets
+### Changeset
 
 ##### Changeset 03/2017
 - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
