@@ -57,9 +57,9 @@ Change the directory to where the downloaded packages are stored and type the fo
 ```sh
  $ pip install pysal
 ```
-If the pysal installtion with **pip** generate errors you can try with manual installation 
+If the pysal installation with **pip** generates errors you can try with manual installation as follows: 
 
-Download the compressed **pysal** package at this link:
+a) Download the compressed **pysal** package at this link
 
 https://pypi.python.org/packages/e7/3b/af87cd60f03734897caa6dc3e840fc10458d0a2c060b3d71803dc56992db/PySAL-1.13.0.tar.gz
 
@@ -67,9 +67,9 @@ The QGIS Python packages are store in this floder:
 ```sh
  $ C:\OSGeo4W64\apps\Python27\Lib\site-packages
 ``` 
-**Note**: if your system is 32bit change _OSGeo4W64_ with OSGeo4W32_
+**Note**: if your system is 32bit change _OSGeo4W64_ with _OSGeo4W32_
 
-Remove the existing folder containing **pysal**, unzip the package you have downloaded. Inside the uncompressed folder you will find a sub-folder called **pysal**. Copy it into the early mentioned path.
+b) Remove the existing folder containing **pysal**. Then, unzip the package you have downloaded; inside the uncompressed folder you will find a sub-folder called **pysal**. Copy it into the early mentioned path.
 
 3) Open QGIS:
 
