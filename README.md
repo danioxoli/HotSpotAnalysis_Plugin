@@ -65,9 +65,9 @@ https://pypi.python.org/packages/e7/3b/af87cd60f03734897caa6dc3e840fc10458d0a2c0
 
 The QGIS Python packages are store in this floder:
 ```sh
- $ C:\OSGeo4W64\apps\Python27\Lib\site-packages
+ $ C:\PROGRA~1\QGIS2~1.14\apps\Python27\lib\site-packages
 ``` 
-**Note**: if your system is 32bit change _OSGeo4W64_ with _OSGeo4W32_
+**Note**:  ...\QGIS2~1.14\... has to be changed according to your QGIS version
 
 b) Remove the existing folder containing **pysal**. Then, unzip the package you have downloaded; inside the uncompressed folder you will find a sub-folder called **pysal**. Copy it into the early mentioned path.
 
