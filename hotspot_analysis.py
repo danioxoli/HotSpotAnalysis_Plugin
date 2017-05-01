@@ -270,8 +270,6 @@ class HotspotAnalysis:
         self.dlg.label_7.setEnabled(False)
         self.dlg.label_8.setEnabled(False)
         self.dlg.label_9.setEnabled(False)
-        self.dlg.knn_number.setEnabled(False)
-        self.dlg.checkBox_knn.setChecked(False)
 
     def clear_fields(self):
         """Clearing the fields when layers are changed"""
@@ -434,8 +432,6 @@ class HotspotAnalysis:
         if type == 3:  # is a polygon
             self.dlg.checkBox_queen.setChecked(True)
             self.dlg.lineEditThreshold.setEnabled(False)
-            self.dlg.checkBox_knn.setEnabled(False)
-            self.dlg.knn_number.setEnabled(False)
             self.dlg.checkBox_optimizeDistance.setChecked(False)
             self.dlg.checkBox_optimizeDistance.setEnabled(False)
             self.dlg.lineEdit_minT.setEnabled(False)
@@ -444,8 +440,6 @@ class HotspotAnalysis:
 
         else:
             self.dlg.checkBox_queen.setChecked(False)
-            self.dlg.checkBox_knn.setEnabled(True)
-            self.dlg.knn_number.setEnabled(True)
             self.dlg.lineEditThreshold.setEnabled(True)
             self.dlg.checkBox_optimizeDistance.setEnabled(True)
             self.dlg.lineEdit_minT.setEnabled(True)
@@ -576,12 +570,8 @@ class HotspotAnalysis:
                                 mx_i = i
                                 mx_moran = moran.z_norm
                         threshold1 = int(mx_i)
-                    if self.dlg.checkBox_knn.isChecked() == 1:
-						weightValue = int(self.dlg.knn_number.text())
-						w = DistanceBand(t, threshold1, p=2, binary=False)
-						#w = pysal.knnW_from_shapefile(inShapefile, k=weightValue, p=1, idVariable="id")
-                    else:
-						w = DistanceBand(t, threshold1, p=2, binary=False)
+
+                    w = DistanceBand(t, threshold1, p=2, binary=False)
                 else:  # polygon
                     w = pysal.queen_from_shapefile(myfilepath.split("|")[0])
                     threshold1 = "None/Queen's Case used"
