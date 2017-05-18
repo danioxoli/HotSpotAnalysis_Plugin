@@ -32,7 +32,7 @@ import pysal
 from pysal.esda.getisord import *
 from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
-from pysal.esda.moran import Moran_Local_BV
+#from pysal.esda.moran import Moran_Local_BV
 #from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
