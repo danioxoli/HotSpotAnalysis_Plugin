@@ -181,6 +181,10 @@ ___
 
 ### Changeset
 
+##### Changeset 06/2017
+- Enabled the use of k-nearest neighbor spatial weights matrix for point shapefiles
+- Minor bugs fixed
+
 ##### Changeset 03/2017
 - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
 - Minor bugs fixed
