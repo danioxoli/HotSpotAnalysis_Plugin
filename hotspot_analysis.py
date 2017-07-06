@@ -275,6 +275,7 @@ class HotspotAnalysis:
         self.dlg.lineEdit_minT.clear()
         self.dlg.lineEdit_maxT.clear()
         self.dlg.lineEdit_dist.clear()
+        self.dlg.lineEditThreshold.clear()
         self.dlg.label_7.setEnabled(False)
         self.dlg.label_8.setEnabled(False)
         self.dlg.label_9.setEnabled(False)
@@ -481,6 +482,7 @@ class HotspotAnalysis:
         """Validator to Check whether the inputs are given properly"""
         global type
 
+
         if type == 3:
             self.dlg.checkBox_queen.setChecked(True)
             return 1
@@ -490,10 +492,12 @@ class HotspotAnalysis:
             or (self.dlg.checkBox_optimizeDistance.isChecked() == 1
                 and (self.dlg.lineEdit_dist.text() != ""
                      and self.dlg.lineEdit_maxT.text() != ""
-                     and self.dlg.lineEdit_minT.text() != ""))) \
+                     and self.dlg.lineEdit_minT.text() != "")) or
+                (self.dlg.checkBox_knn.isChecked() == 1)) \
                 and self.dlg.lineEdit.text() != "":
             return 1
         else:
+
             return 0
 
     def loadLayerList(self):
@@ -529,14 +533,15 @@ class HotspotAnalysis:
                 return False
             return [layers, layers_shp]
         else:
-            return False
+            return [layers, False]
 
     def run(self):
         """Run method that performs all the real work"""  # show the dialog
+
         self.clear_ui()
         layers, layers_shp = self.loadLayerList()
-        # if (existingLayer==False):
-        #    return
+        if len(layers) == 0:
+            return
 
         self.dlg.show()
         # Run the dialog event loop
@@ -579,9 +584,9 @@ class HotspotAnalysis:
                     xy = (geometry.GetX(), geometry.GetY())
                     t = t + (xy,)
                     # t = get_points_array_from_shapefile(layerName.split("|")[0])
-                if self.dlg.checkBox_optimizeDistance.isChecked() == 0:  # if threshold is given
+                if self.dlg.lineEditThreshold.text() and self.dlg.lineEditThreshold.text() != "":  # if threshold is given
                     threshold1 = int(self.dlg.lineEditThreshold.text())
-                else:  # if user needs to optimize threshold
+                elif self.dlg.checkBox_knn.isChecked() == 0:  # if user needs to optimize threshold (no knn)
                     mx_moran = -1000.0
                     mx_i = -1000.0
                     minT = int(self.dlg.lineEdit_minT.text())
