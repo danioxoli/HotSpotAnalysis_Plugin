@@ -32,7 +32,7 @@ import pysal
 from pysal.esda.getisord import *
 from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
-#from pysal.weights.util import get_points_array_from_shapefile
+# from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
 
@@ -234,18 +234,26 @@ class HotspotAnalysis:
             self.dlg.label_8.setEnabled(False)
             self.dlg.label_9.setEnabled(False)
 
-    def randomPerm(self, checked):
+    def randomPermChecked(self, checked):
         """Settings for Random permutations"""
         if checked == True:
             self.dlg.lineEdit_random.setEnabled(True)
         else:
             self.dlg.lineEdit_random.setEnabled(False)
 
-    def moranBi(self, checked):
+    def moranBiChecked(self, checked):
         if checked == True:
             self.dlg.comboBox_C_2.setEnabled(True)
         else:
             self.dlg.comboBox_C_2.setEnabled(False)
+
+    def knnChecked(self, checked):
+        if checked == True:
+            self.dlg.lineEditThreshold.clear()
+            self.dlg.lineEditThreshold.setEnabled(False)
+            self.dlg.knn_number.setEnabled(True)
+        else:
+            self.dlg.lineEditThreshold.setEnabled(True)
 
     def clear_ui(self):
         """Clearing the UI for new operations"""
@@ -272,6 +280,8 @@ class HotspotAnalysis:
         self.dlg.label_9.setEnabled(False)
         self.dlg.knn_number.setEnabled(False)
         self.dlg.checkBox_knn.setChecked(False)
+        self.dlg.checkBox_knn.setEnabled(True)
+        self.load_comboBox()
 
     def clear_fields(self):
         """Clearing the fields when layers are changed"""
@@ -457,6 +467,7 @@ class HotspotAnalysis:
     def error_msg(self):
         """Message to report missing fields"""
         self.clear_ui()
+        self.loadLayerList()
         QMessageBox.warning(self.dlg.show(), self.tr("HotspotAnalysis:Warning"),
                             self.tr("Please specify input fields properly"), QMessageBox.Ok)
 
@@ -485,9 +496,7 @@ class HotspotAnalysis:
         else:
             return 0
 
-    def run(self):
-        """Run method that performs all the real work"""
-        self.clear_ui()
+    def loadLayerList(self):
         layers_list = []
         layers_shp = []
         # Show the shapefiles in the ComboBox
@@ -513,115 +522,126 @@ class HotspotAnalysis:
                 self.dlg.comboBox.activated.connect(lambda: self.load_comboBox())
                 self.dlg.comboBox.currentIndexChanged.connect(lambda: self.load_comboBox())
                 self.dlg.checkBox_optimizeDistance.toggled.connect(self.optimizedThreshold)  # checkbox toggle event
-                self.dlg.checkBox_randomPerm.toggled.connect(self.randomPerm)  # checkbox toggle event
-                self.dlg.checkBox_moranBi.toggled.connect(self.moranBi)  # checkbox toggle event
+                self.dlg.checkBox_randomPerm.toggled.connect(self.randomPermChecked)  # checkbox toggle event
+                self.dlg.checkBox_moranBi.toggled.connect(self.moranBiChecked)  # checkbox toggle event
+                self.dlg.checkBox_knn.toggled.connect(self.knnChecked)  # checkbox toggle event
             except:
+                return False
+            return [layers, layers_shp]
+        else:
+            return False
+
+    def run(self):
+        """Run method that performs all the real work"""  # show the dialog
+        self.clear_ui()
+        layers, layers_shp = self.loadLayerList()
+        # if (existingLayer==False):
+        #    return
+
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed and fields are not empty
+        if result and (self.validator() == 1):
+            selectedLayerIndex = self.dlg.comboBox.currentIndex()
+            if selectedLayerIndex < 0 or selectedLayerIndex > len(layers):
                 return
+            selectedLayer = layers_shp[selectedLayerIndex]
+            layerName = selectedLayer.dataProvider().dataSourceUri()
+            C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
+            C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
+            filename = self.dlg.lineEdit.text()
+            (path, layer_id) = layerName.split('|')
 
-            # show the dialog
-            self.dlg.show()
-            # Run the dialog event loop
-            result = self.dlg.exec_()
-            # See if OK was pressed and fields are not empty
-            if result and (self.validator() == 1):
-                selectedLayerIndex = self.dlg.comboBox.currentIndex()
-                if selectedLayerIndex < 0 or selectedLayerIndex > len(layers):
-                    return
-                selectedLayer = layers_shp[selectedLayerIndex]
-                layerName = selectedLayer.dataProvider().dataSourceUri()
-                C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
-                C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
-                filename = self.dlg.lineEdit.text()
-                (path, layer_id) = layerName.split('|')
+            inDriver = ogr.GetDriverByName("ESRI Shapefile")
+            inDataSource = inDriver.Open(path, 0)
+            inLayer = inDataSource.GetLayer()
+            type = inLayer.GetLayerDefn().GetGeomType()
 
-                inDriver = ogr.GetDriverByName("ESRI Shapefile")
-                inDataSource = inDriver.Open(path, 0)
-                inLayer = inDataSource.GetLayer()
-                type = inLayer.GetLayerDefn().GetGeomType()
+            u = []
+            for i in range(0, inLayer.GetFeatureCount()):
+                geometry = inLayer.GetFeature(i)
+                u.append(geometry.GetField(C))
 
-                u = []
+            y = numpy.array(u)  # attributes vector
+
+            if self.dlg.checkBox_moranBi.isChecked() == 1:
+                v = []
                 for i in range(0, inLayer.GetFeatureCount()):
                     geometry = inLayer.GetFeature(i)
-                    u.append(geometry.GetField(C))
+                    v.append(geometry.GetField(C2))
+                x = numpy.array(v)
 
-                y = numpy.array(u)  # attributes vector
-
-                if self.dlg.checkBox_moranBi.isChecked() == 1:
-                    v = []
-                    for i in range(0, inLayer.GetFeatureCount()):
-                        geometry = inLayer.GetFeature(i)
-                        v.append(geometry.GetField(C2))
-                    x = numpy.array(v)
-
-                if type == 1:  # point
-                    t = ()
-                    for feature in inLayer:
-                        geometry = feature.GetGeometryRef()
-                        xy = (geometry.GetX(), geometry.GetY())
-                        t = t + (xy,)                    
-                    #t = get_points_array_from_shapefile(layerName.split("|")[0])
-                    if self.dlg.checkBox_optimizeDistance.isChecked() == 0:  # if threshold is given
-                        threshold1 = int(self.dlg.lineEditThreshold.text())
-                    else:  # if user needs to optimize threshold
-                        mx_moran = -1000.0
-                        mx_i = -1000.0
-                        minT = int(self.dlg.lineEdit_minT.text())
-                        maxT = int(self.dlg.lineEdit_maxT.text())
-                        dist = int(self.dlg.lineEdit_dist.text())
-                        for i in range(minT, maxT + dist, dist):
-                            w = DistanceBand(t, threshold=i, p=2, binary=False)
-                            moran = pysal.Moran(y, w)
-                            # print moran.z_norm
-                            if moran.z_norm > mx_moran:
-                                mx_i = i
-                                mx_moran = moran.z_norm
-                        threshold1 = int(mx_i)
-                    if self.dlg.checkBox_knn.isChecked() == 1:
-                        weightValue = int(self.dlg.knn_number.text())
-                        w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
-                    else:
-                        w = DistanceBand(t, threshold1, p=2, binary=False)
-                else:  # polygon
-                    w = pysal.queen_from_shapefile(myfilepath.split("|")[0])
-                    threshold1 = "None/Queen's Case used"
-                if self.dlg.checkBox_rowStandard.isChecked() == 1:
-                    type_w = "R"
+            if type == 1:  # point
+                t = ()
+                for feature in inLayer:
+                    geometry = feature.GetGeometryRef()
+                    xy = (geometry.GetX(), geometry.GetY())
+                    t = t + (xy,)
+                    # t = get_points_array_from_shapefile(layerName.split("|")[0])
+                if self.dlg.checkBox_optimizeDistance.isChecked() == 0:  # if threshold is given
+                    threshold1 = int(self.dlg.lineEditThreshold.text())
+                else:  # if user needs to optimize threshold
+                    mx_moran = -1000.0
+                    mx_i = -1000.0
+                    minT = int(self.dlg.lineEdit_minT.text())
+                    maxT = int(self.dlg.lineEdit_maxT.text())
+                    dist = int(self.dlg.lineEdit_dist.text())
+                    for i in range(minT, maxT + dist, dist):
+                        w = DistanceBand(t, threshold=i, p=2, binary=False)
+                        moran = pysal.Moran(y, w)
+                        # print moran.z_norm
+                        if moran.z_norm > mx_moran:
+                            mx_i = i
+                            mx_moran = moran.z_norm
+                    threshold1 = int(mx_i)
+                if self.dlg.checkBox_knn.isChecked() == 1:
+                    weightValue = int(self.dlg.knn_number.text())
+                    w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
+                    threshold1 = "None/KNN used " + self.dlg.knn_number.text()
                 else:
-                    type_w = "B"
-
-                if self.dlg.checkBox_randomPerm.isChecked() == 1:
-                    permutationsValue = int(self.dlg.lineEdit_random.text())
-                else:
-                    permutationsValue = 999
-
-                numpy.random.seed(12345)
-
-                if self.dlg.checkBox_gi.isChecked() == 1:
-                    statistics = G_Local(y, w, star=True, transform=type_w, permutations=permutationsValue)
-                elif self.dlg.checkBox_moran.isChecked() == 1:
-                    statistics = Moran_Local(y, w, transformation=type_w, permutations=permutationsValue)
-                else:
-                    statistics = Moran_Local_BV(y, x, w, transformation=type_w, permutations=permutationsValue)
-
-                self.write_file(filename, statistics, layerName, inLayer,
-                                inDataSource,
-                                y, threshold1)
-                # assign the style to the output layer on QGIS
-                if self.dlg.checkBox_gi.isChecked() == 1:
-                    if type == 1:  # point
-                        stylePath = "/layer_style/hotspots_class.qml"
-                    else:
-                        stylePath = "/layer_style/hotspots_class_poly.qml"
-                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
-                else:
-                    if type == 1:  # point
-                        stylePath = "/layer_style/moran_class.qml"
-                    else:
-                        stylePath = "/layer_style/moran_class_poly.qml"
-                    self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
-
-            elif result and (self.validator() == 0):
-                self.error_msg()
+                    w = DistanceBand(t, threshold1, p=2, binary=False)
+            else:  # polygon
+                w = pysal.queen_from_shapefile(myfilepath.split("|")[0])
+                threshold1 = "None/Queen's Case used"
+            if self.dlg.checkBox_rowStandard.isChecked() == 1:
+                type_w = "R"
             else:
-                self.clear_ui()
-            pass
+                type_w = "B"
+
+            if self.dlg.checkBox_randomPerm.isChecked() == 1:
+                permutationsValue = int(self.dlg.lineEdit_random.text())
+            else:
+                permutationsValue = 999
+
+            numpy.random.seed(12345)
+
+            if self.dlg.checkBox_gi.isChecked() == 1:
+                statistics = G_Local(y, w, star=True, transform=type_w, permutations=permutationsValue)
+            elif self.dlg.checkBox_moran.isChecked() == 1:
+                statistics = Moran_Local(y, w, transformation=type_w, permutations=permutationsValue)
+            else:
+                statistics = Moran_Local_BV(y, x, w, transformation=type_w, permutations=permutationsValue)
+
+            self.write_file(filename, statistics, layerName, inLayer,
+                            inDataSource,
+                            y, threshold1)
+            # assign the style to the output layer on QGIS
+            if self.dlg.checkBox_gi.isChecked() == 1:
+                if type == 1:  # point
+                    stylePath = "/layer_style/hotspots_class.qml"
+                else:
+                    stylePath = "/layer_style/hotspots_class_poly.qml"
+                self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
+            else:
+                if type == 1:  # point
+                    stylePath = "/layer_style/moran_class.qml"
+                else:
+                    stylePath = "/layer_style/moran_class_poly.qml"
+                self.iface.activeLayer().loadNamedStyle(os.path.dirname(__file__) + stylePath)
+
+        elif result and (self.validator() == 0):
+            self.error_msg()
+        else:
+            self.clear_ui()
+        pass
