@@ -603,12 +603,12 @@ class HotspotAnalysis:
                 if self.dlg.checkBox_knn.isChecked() == 1:
                     weightValue = int(self.dlg.knn_number.text())
                     w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
-                    threshold1 = "None/KNN used " + self.dlg.knn_number.text()
+                    threshold1 = "None / KNN with K = " + self.dlg.knn_number.text()
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
                 w = pysal.queen_from_shapefile(myfilepath.split("|")[0])
-                threshold1 = "None/Queen's Case used"
+                threshold1 = "None / Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
             else:
