@@ -10,7 +10,7 @@
 name=Hotspot Analysis
 qgisMinimumVersion=2.0
 description=This plugin implements LISA statistics needed for Hotspot and Cluster Analysis
-version=0.2
+version=0.3
 author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
 email=daniele.oxoli@polimi.it
 
@@ -23,6 +23,9 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
+changelog=0.3
+    - Enabled K-nearest neighbors spatial weighs matrix
+    - Minor bugs fixed 
 changelog=0.2
     - Enabled Anselin Local Moran's I and Bivariate Local Moran computation
     - Fixed crashing while adding/removing layer from the QGIS layer list
