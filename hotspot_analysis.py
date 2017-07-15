@@ -15,7 +15,7 @@
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version                                    *
+ *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
 """
@@ -299,7 +299,7 @@ class HotspotAnalysis:
 
         outShapefile = filename + ".shp"
 
-        # Remove eventually alrady exisiting output 
+        # Remove eventually alrady exisiting output
         if os.path.exists(outShapefile):
             outDriver.DeleteDataSource(outShapefile)
 
@@ -480,11 +480,9 @@ class HotspotAnalysis:
 
     def validator(self):
         """Validator to Check whether the inputs are given properly"""
-        global type
 
-
-        if type == 3:
-            self.dlg.checkBox_queen.setChecked(True)
+        # Polygon case
+        if self.dlg.checkBox_queen.isChecked() == 1:
             return 1
 
         if ((self.dlg.checkBox_optimizeDistance.isChecked() == 0
@@ -497,7 +495,6 @@ class HotspotAnalysis:
                 and self.dlg.lineEdit.text() != "":
             return 1
         else:
-
             return 0
 
     def loadLayerList(self):
@@ -557,12 +554,10 @@ class HotspotAnalysis:
             C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
             filename = self.dlg.lineEdit.text()
             (path, layer_id) = layerName.split('|')
-
             inDriver = ogr.GetDriverByName("ESRI Shapefile")
             inDataSource = inDriver.Open(path, 0)
             inLayer = inDataSource.GetLayer()
             type = inLayer.GetLayerDefn().GetGeomType()
-
             u = []
             for i in range(0, inLayer.GetFeatureCount()):
                 geometry = inLayer.GetFeature(i)
@@ -603,11 +598,11 @@ class HotspotAnalysis:
                 if self.dlg.checkBox_knn.isChecked() == 1:
                     weightValue = int(self.dlg.knn_number.text())
                     w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
-                    threshold1 = "None / KNN with K = " + self.dlg.knn_number.text()
+                    threshold1 = "None / KNN used - K = " + self.dlg.knn_number.text()
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
-                w = pysal.queen_from_shapefile(myfilepath.split("|")[0])
+                w = pysal.queen_from_shapefile(layerName.split("|")[0])
                 threshold1 = "None / Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
@@ -620,7 +615,6 @@ class HotspotAnalysis:
                 permutationsValue = 999
 
             numpy.random.seed(12345)
-
             if self.dlg.checkBox_gi.isChecked() == 1:
                 statistics = G_Local(y, w, star=True, transform=type_w, permutations=permutationsValue)
             elif self.dlg.checkBox_moran.isChecked() == 1:
