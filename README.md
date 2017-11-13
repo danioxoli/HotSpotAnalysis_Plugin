@@ -166,7 +166,7 @@ ___
 
 ### Additional Material 
 
-A demo exercise with the new plugin version here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
+An user guide with demo exercises is included here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
 
 Plese cite this as: 
 
@@ -174,7 +174,7 @@ _Oxoli, D., Prestifilippo, G., Bertocchi, D., Zurbaràn, M. (2017). Enabling spa
 
 Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotspot-analysis-with-qgis-foss4git-2017
 
-**Note**: some of this material might be based on the **old version of the plugin**! 
+**Note**: part of this material might be based on the **old version of the plugin**! 
 
 ___
 
