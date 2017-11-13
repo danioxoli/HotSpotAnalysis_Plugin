@@ -168,8 +168,6 @@ ___
 
 A demo exercise with the new plugin version here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
 
-An example of plugin application is available here: https://peerj.com/preprints/2204/
-
 Plese cite this as: 
 
 _Oxoli, D., Prestifilippo, G., Bertocchi, D., Zurbaràn, M. (2017). Enabling spatial autocorrelation mapping  in QGIS: The Hotspot Analysis Plugin. GEAM. GEOINGEGNERIA AMBIENTALE E MINERARIA, 151(2), 45-50._
@@ -177,7 +175,6 @@ _Oxoli, D., Prestifilippo, G., Bertocchi, D., Zurbaràn, M. (2017). Enabling spa
 Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotspot-analysis-with-qgis-foss4git-2017
 
 **Note**: some of this material might be based on the **old version of the plugin**! 
-
 
 ___
 
