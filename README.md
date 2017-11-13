@@ -22,7 +22,7 @@ These libraries are not included in the QGIS core libraries and must be installe
 ___
 ### Installation - Windows OS
 
-1) Open `OSGeo4W Shell` as `Administrator` and type:
+**1)** Open `OSGeo4W Shell` as `Administrator` and type:
 ```sh
  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
  $ python get-pip.py
@@ -39,7 +39,7 @@ Further information regarding `PIP` installation can be found in:
 - https://trac.osgeo.org/osgeo4w/wiki/ExternalPythonPackages 
 - https://packaging.python.org/en/latest/installing/#install-pip-setuptools-and-wheel
 
-2) Download the following packages according to your Python version and your Operating System characteristics:
+**2)** Download the following packages according to your Python version and your Operating System characteristics:
  
  `Numpy` : https://pypi.anaconda.org/carlkl/simple/numpy/ 
 
@@ -74,14 +74,14 @@ The QGIS Python packages are store in this floder:
 
 b) Remove the existing folder containing **pysal**. Then, unzip the package you have downloaded; inside the uncompressed folder you will find a sub-folder called **pysal**. Copy it into the early mentioned path.
 
-3) Open QGIS:
+**3)** Open QGIS:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
-4) If you are interested in the **latest unreleased version**:
+**4)** If you are interested in the **latest unreleased version**:
 
 **Download or clone** the `GitHub` repository given below into QGIS Python Plugins folder:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
@@ -93,7 +93,7 @@ https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 ___
 ### Installation - Ubuntu
 
-1) Open a **Terminal** and type the commands:
+**1)** Open a **Terminal** and type the commands:
 ```sh
  $ sudo apt-get install python-numpy
  $ sudo apt-get install python-scipy 
@@ -103,14 +103,14 @@ To install **PySAL**:
  $ sudo pip install pysal
 ```
 
-2) Open QGIS:
+**2)** Open QGIS:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
-3) If you are interested in the **latest unreleased version**:
+**3)** If you are interested in the **latest unreleased version**:
 
 Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
 ```sh
@@ -124,7 +124,7 @@ Open a **Terminal** and change directory to QGIS Plugins directory, default is:
 ___
 ### Installation - macOS
 
-1) Install dependencies:
+**1)** Install dependencies:
 
 If you installed QGIS on your machine using this source : http://www.kyngchaos.com/software/qgis , you would find the required dependencies (**Numpy - Scipy - Pysal**) in the list of the **Optional Python Modules**. You can install them directly from here: http://www.kyngchaos.com/software/python 
 
@@ -137,14 +137,14 @@ Open a **Terminal** and type the commands:
  $ sudo easy_install pysal
 ```
 
-2) Open QGIS:
+**2)** Open QGIS:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
-3) If you are interested in the **latest unreleased version**:
+**3)** If you are interested in the **latest unreleased version**:
 
 Change directory to QGIS Plugins directory, default is: 
 ```sh
@@ -172,13 +172,12 @@ An example of plugin application is available here: https://peerj.com/preprints/
 
 Plese cite this as: 
 
-_Oxoli D, Zurbarán MA, Shaji S, Muthusamy AK. (2016) Hotspot analysis: a first prototype Python plugin enabling exploratory spatial data analysis into QGIS. PeerJ Preprints 4:e2204v4_ https://doi.org/10.7287/peerj.preprints.2204v4
-
-Presentation slides are available here: https://www.slideshare.net/mobile/danieleoxoli/hotspot-analysis-ogrs2016
-
-**Note**: this material is based on the **old version of the plugin**! 
+_Oxoli, D., Prestifilippo, G., Bertocchi, D., Zurbaràn, M. (2017). Enabling spatial autocorrelation mapping  in QGIS: The Hotspot Analysis Plugin. GEAM. GEOINGEGNERIA AMBIENTALE E MINERARIA, 151(2), 45-50._
 
 Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotspot-analysis-with-qgis-foss4git-2017
+
+**Note**: some of this material might be based on the **old version of the plugin**! 
+
 
 ___
 
