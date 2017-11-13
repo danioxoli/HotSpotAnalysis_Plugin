@@ -27,7 +27,7 @@ ___
  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
  $ python get-pip.py
 ```
-#### Alternatively:
+#### Alternatively (1):
 
 Download `get-pip.py` , to enable `PIP` functionalities, which is available at this link: <https://bootstrap.pypa.io/get-pip.py> 
 
@@ -57,6 +57,9 @@ Change the directory to where the downloaded packages are stored and type the fo
 ```sh
  $ pip install pysal
 ```
+
+#### Alternatively (2):
+
 If the pysal installation with **pip** generates errors you can try with manual installation as follows: 
 
 a) Download the compressed **pysal** package at this link
