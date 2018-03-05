@@ -19,15 +19,19 @@
  *                                                                         *
  ***************************************************************************/
 """
+# import basics
 from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt5.QtGui import QAction, QIcon, QFileDialog, QComboBox, QFrame, QLineEdit, QMessageBox
 from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
+
+# import local libraries
 # Initialize Qt resources from file resources.py
 import resources
 # Import the code for the dialog
 from hotspot_analysis_dialog import HotspotAnalysisDialog
-import os.path
 
+# import outside libraries
+import os.path
 import pysal
 from pysal.esda.getisord import *
 from pysal.esda.moran import *
@@ -35,7 +39,6 @@ from pysal.weights.Distance import DistanceBand
 # from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
-
 from osgeo import ogr, gdal
 
 type = 0  # geometry type: 1 point, 3 polygon
