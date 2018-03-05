@@ -3,7 +3,7 @@
 # Resource object code
 #
 # Created: Mon Mar 27 16:26:04 2017
-#      by: The Resource Compiler for PyQt (Qt v4.8.5)-> test to 5
+#      by: The Resource Compiler for PyQt5 (Qt v5.9.3)
 #
 # WARNING! All changes made in this file will be lost!
 
