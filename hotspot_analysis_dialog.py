@@ -22,8 +22,7 @@
 """
 
 import os
-
-from PyQt5 import QtGui, uic
+from qgis.PyQt import QtGui, uic
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'hotspot_analysis_dialog_base.ui'))
