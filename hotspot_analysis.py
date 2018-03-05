@@ -26,7 +26,9 @@ from builtins import object
 from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from qgis.PyQt.QtWidgets import QAction, QFileDialog, QComboBox, QFrame, QLineEdit, QMessageBox
 from qgis.PyQt.QtGui import QIcon
-from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
+#from qgis.core import QgsMapLayerRegistry, QgsVectorLayer (not working)
+from qgis.core import *
+
 # Initialize Qt resources from file resources.py
 from . import resources
 # Import the code for the dialog
