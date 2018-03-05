@@ -19,7 +19,6 @@
  *                                                                         *
  ***************************************************************************/
 """
-# import basics
 from __future__ import absolute_import
 from builtins import str
 from builtins import range
@@ -28,21 +27,20 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from qgis.PyQt.QtWidgets import QAction, QFileDialog, QComboBox, QFrame, QLineEdit, QMessageBox
 from qgis.PyQt.QtGui import QIcon
 from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
-
-# import internal libraries
 # Initialize Qt resources from file resources.py
 from . import resources
 # Import the code for the dialog
 from .hotspot_analysis_dialog import HotspotAnalysisDialog
-
-# import external libraries
 import os.path
-import numpy
-import sys
+
 import pysal
 from pysal.esda.getisord import *
 from pysal.esda.moran import *
 from pysal.weights.Distance import DistanceBand
+# from pysal.weights.util import get_points_array_from_shapefile
+import numpy
+import sys
+
 from osgeo import ogr, gdal
 
 type = 0  # geometry type: 1 point, 3 polygon
@@ -60,7 +58,7 @@ def pr(self, msg):
 
 
 class HotspotAnalysis(object):
-     """QGIS Plugin Implementation."""
+    """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
         """Constructor.
