@@ -23,12 +23,14 @@
 
 import os
 from qgis.PyQt import QtGui, uic
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'hotspot_analysis_dialog_base.ui'))
 
 
-class HotspotAnalysisDialog(QtGui.QDialog, FORM_CLASS):
+#class HotspotAnalysisDialog(QtGui.QDialog, FORM_CLASS):
+class HotspotAnalysisDialog(QtWidgets.QWidget, FORM_CLASS):
     def __init__(self, parent=None):
         """Constructor."""
         super(HotspotAnalysisDialog, self).__init__(parent)
