@@ -10,14 +10,14 @@
 name=Hotspot Analysis
 qgisMinimumVersion=3.0
 description=This plugin implements LISA statistics needed for Hotspot and Cluster Analysis
-version=1.0
-author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
+version=1.0.1
+author=Daniele Oxoli
 email=daniele.oxoli@polimi.it
 
-about=The Plugin implements Local Indicators of Spatial Association (LISA) statistics to perform the Hotspot (Getis-Ord Gi*) and Clusters (Moran's I) analysis and links them to maps. Input data must be a shapefile of points or polygons with an associated projected coordinate system and (at least) one numeric attribute. The plugin requires Numpy, Scipy and Pysal (see repository for installation instruction)
+about=The Plugin implements Local Indicators of Spatial Association (LISA) statistics to perform the Hotspot (Getis-Ord Gi*) and Clusters (Moran's I) analysis and links them to maps. Input data must be a shapefile of points or polygons with an associated projected coordinate system and (at least) one numeric attribute. The plugin requires Numpy, Scipy and Pysal (see repository for installation instruction).
 
 tracker=https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues
-repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
+repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin
 # End of mandatory metadata
 
 # Recommended items:
@@ -36,7 +36,7 @@ changelog=0.2
 # Tags are comma separated with spaces allowed
 tags=hotspot, Python, ESDA, vector
 
-homepage=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
+homepage=https://github.com/danioxoli/HotSpotAnalysis_Plugin
 category=Vector
 icon=hotspot.png
 # experimental flag
@@ -44,4 +44,3 @@ experimental=True
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
-
