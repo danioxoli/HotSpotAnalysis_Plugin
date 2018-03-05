@@ -19,8 +19,8 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
-from PyQt4.QtGui import QAction, QIcon, QFileDialog, QComboBox, QFrame, QLineEdit, QMessageBox
+from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
+from PyQt5.QtGui import QAction, QIcon, QFileDialog, QComboBox, QFrame, QLineEdit, QMessageBox
 from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
 # Initialize Qt resources from file resources.py
 import resources
