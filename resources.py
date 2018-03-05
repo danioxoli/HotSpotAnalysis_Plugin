@@ -3,11 +3,11 @@
 # Resource object code
 #
 # Created: Mon Mar 27 16:26:04 2017
-#      by: The Resource Compiler for PyQt (Qt v4.8.5)
+#      by: The Resource Compiler for PyQt (Qt v4.8.5)-> test to 5
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore
+from PyQt5 import QtCore
 
 qt_resource_data = "\
 \x00\x00\x14\x4f\
