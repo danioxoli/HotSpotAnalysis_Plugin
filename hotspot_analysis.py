@@ -556,7 +556,7 @@ class HotspotAnalysis(object):
             if selectedLayerIndex < 0 or selectedLayerIndex > len(layers):
                 return
             selectedLayer = layers_shp[selectedLayerIndex]
-            layerName = selectedLayer.QgsVectorDataProvider().dataSourceUri()
+            layerName = selectedLayer.dataProvider().dataSourceUri()
             C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
             C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
             filename = self.dlg.lineEdit.text()
