@@ -508,7 +508,7 @@ class HotspotAnalysis(object):
         layers_list = []
         layers_shp = []
         # Show the shapefiles in the ComboBox
-        layers = self.iface.legendInterface().layers()
+        layers = [layer for layer in QgsProject.instance().mapLayers().values()]
         if len(layers) != 0:  # checklayers exist in the project
             for layer in layers:
                 if hasattr(layer, "dataProvider"):  # to not consider Openlayers basemaps in the layer list
