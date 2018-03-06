@@ -125,7 +125,7 @@ This will install in your Python 3 environment all the required dependencies.
  $  sudo git clone -b qgis3 https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
-Open QGIS 3:
+**2)** Open QGIS 3:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
@@ -197,6 +197,9 @@ Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotsp
 ___
 
 ### Changeset
+
+##### Changeset 03/2018
+- Plugin translation to QGIS 3 
 
 ##### Changeset 06/2017
 - Enabled the use of k-nearest neighbor spatial weights matrix for point shapefiles
