@@ -24,13 +24,12 @@
 import os
 from qgis.PyQt import QtGui, uic
 from PyQt5 import QtCore, QtGui, QtWidgets
+from qgis.PyQT.QtWidgets import (QDialog)
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'hotspot_analysis_dialog_base.ui'))
 
-
-#class HotspotAnalysisDialog(QtGui.QDialog, FORM_CLASS):
-class HotspotAnalysisDialog(QtWidgets.QWidget, FORM_CLASS):
+class HotspotAnalysisDialog(QDialog, FORM_CLASS):
     def __init__(self, parent=None):
         """Constructor."""
         super(HotspotAnalysisDialog, self).__init__(parent)
@@ -39,4 +38,5 @@ class HotspotAnalysisDialog(QtWidgets.QWidget, FORM_CLASS):
         # self.<objectname>, and you can use autoconnect slots - see
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
+        QDialog.__init__(self)
         self.setupUi(self)
