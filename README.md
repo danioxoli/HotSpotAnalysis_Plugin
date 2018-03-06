@@ -244,7 +244,7 @@ Bug tracker and Wiki
 
 _The Hotspot Analysis plugin is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation_
 
-Copyright © 2017 Daniele Oxoli/ Mayra Zurbaràn/ Gabriele Prestifilippo/ Stanly Shaji - Politecnico Di Milano.
+Copyright © 2018 Daniele Oxoli/ Mayra Zurbaràn/ Gabriele Prestifilippo/ Stanly Shaji - Politecnico Di Milano.
 
 E-mail: daniele.oxoli@polimi.it
 
