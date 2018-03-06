@@ -24,7 +24,7 @@
 import os
 from qgis.PyQt import QtGui, uic
 from PyQt5 import QtCore, QtGui, QtWidgets
-from qgis.PyQT.QtWidgets import (QDialog)
+from PyQt5.QtWidgets import QDialog
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'hotspot_analysis_dialog_base.ui'))
