@@ -398,7 +398,7 @@ class HotspotAnalysis(object):
                     else:
                         outFeature.SetField("Z-score", -statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
-                outFeature.SetField("q-value", statistics.q[i])
+                outFeature.SetField("q-value", int(statistics.q[i]))
 
             # Add new feature to output Layer
             outLayer.CreateFeature(outFeature)
