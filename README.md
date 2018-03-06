@@ -19,6 +19,8 @@ Dependency Requirements:
 These libraries are not included in the QGIS core libraries and must be installed prior to the use of the plugin through the [OSGeo4W Shell] on **Windows**, or through terminal on **Ubuntu** and **macOS** (see the following).
 
 **Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the offcial **QGIS Python Plugins Repository**. Depending on the pre-installed Pysal version, some of the functionalities might not be available_
+
+<!---
 ___
 ### Installation - Windows OS
 
@@ -90,10 +92,13 @@ https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
 ```sh
  $ cd C:\Users\<your_user_name>\.qgis2\python\plugins
 ``` 
+--->
 ___
+
 ### Installation - Ubuntu
 
 **1)** Open a **Terminal** and type the commands:
+<!---
 ```sh
  $ sudo apt-get install python-numpy
  $ sudo apt-get install python-scipy 
@@ -102,25 +107,38 @@ To install **PySAL**:
 ```sh
  $ sudo pip install pysal
 ```
+--->
 
-**2)** Open QGIS:
+```sh
+ $ sudo apt-get install python3-pysal
+```
+This will install in your Python 3 environment all the required dependencies.
 
-Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
+**2)** Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
 
-In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
-
-**3)** If you are interested in the **latest unreleased version**:
-
-Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
 ```sh
  $ cd /usr/share/qgis/python/plugins 
 ``` 
 **Clone** the `GitHub` repository into the earlier mentioned path:
+
 ```sh
- $  sudo git clone https://github.com/danioxoli/HotSpotAnalysis_Plugin
+ $  sudo git clone -b qgis3 https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
+Open QGIS 3:
+
+Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
+
+The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
+
+<!---
+In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
+A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
+
+**3)** If you are interested in the **latest unreleased version**:
+--->
+
+<!---
 ___
 ### Installation - macOS
 
@@ -161,7 +179,7 @@ or **Clone** the `GitHub` repository into the earlier mentioned path:
 ```sh
  $  sudo git clone https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
-
+--->
 ___
 
 ### Additional Material 
