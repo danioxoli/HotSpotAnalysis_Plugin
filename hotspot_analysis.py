@@ -557,8 +557,8 @@ class HotspotAnalysis(object):
                 return
             selectedLayer = layers_shp[selectedLayerIndex]
             layerName = selectedLayer.dataProvider().dataSourceUri()
-            C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
-            C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
+            C = selectedLayer.fields().indexFromName(self.dlg.comboBox_C.currentText())
+            C2 = selectedLayer.fields().indexFromName(self.dlg.comboBox_C_2.currentText())
             filename = self.dlg.lineEdit.text()
             (path, layer_id) = layerName.split('|')
             inDriver = ogr.GetDriverByName("ESRI Shapefile")
