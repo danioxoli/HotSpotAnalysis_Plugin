@@ -522,7 +522,7 @@ class HotspotAnalysis(object):
             if selectedLayerIndex < 0 or selectedLayerIndex > len(layers_shp):
                 return
             selectedLayer = layers_shp[selectedLayerIndex]
-            fieldnames = [field.name() for field in selectedLayer.pendingFields()]  # fetching fieldnames of layer
+            fieldnames = [field.name() for field in selectedLayer.fields()]  # fetching fieldnames of layer
             self.clear_fields()
             self.dlg.comboBox_C.addItems(fieldnames)
             self.dlg.comboBox_C_2.addItems(fieldnames)
