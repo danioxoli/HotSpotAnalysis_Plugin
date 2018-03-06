@@ -436,7 +436,7 @@ class HotspotAnalysis(object):
         except:
             return
 
-        fieldnames = [field.name() for field in selectedLayer.pendingFields()]
+        fieldnames = [field.name() for field in selectedLayer.fields()]
 
         self.clear_fields()
         self.dlg.comboBox_C.addItems(fieldnames)
@@ -556,7 +556,7 @@ class HotspotAnalysis(object):
             if selectedLayerIndex < 0 or selectedLayerIndex > len(layers):
                 return
             selectedLayer = layers_shp[selectedLayerIndex]
-            layerName = selectedLayer.dataProvider().dataSourceUri()
+            layerName = selectedLayer.QgsVectorDataProvider().dataSourceUri()
             C = selectedLayer.fieldNameIndex(self.dlg.comboBox_C.currentText())
             C2 = selectedLayer.fieldNameIndex(self.dlg.comboBox_C_2.currentText())
             filename = self.dlg.lineEdit.text()
