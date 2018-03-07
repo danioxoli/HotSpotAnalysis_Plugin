@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
-    <height>629</height>
+    <width>430</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,7 +58,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>100</y>
+     <y>90</y>
      <width>201</width>
      <height>22</height>
     </rect>
@@ -74,7 +74,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>140</y>
+     <y>130</y>
      <width>181</width>
      <height>16</height>
     </rect>
@@ -150,7 +150,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>140</y>
+     <y>130</y>
      <width>121</width>
      <height>22</height>
     </rect>
@@ -191,7 +191,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>100</y>
+     <y>90</y>
      <width>161</width>
      <height>16</height>
     </rect>
@@ -209,9 +209,9 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>300</y>
-     <width>401</width>
+     <width>411</width>
      <height>71</height>
     </rect>
    </property>
@@ -246,7 +246,7 @@
    <widget class="QLineEdit" name="lineEdit_dist">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>310</x>
       <y>40</y>
       <width>71</width>
       <height>20</height>
@@ -262,7 +262,7 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>170</x>
       <y>20</y>
       <width>101</width>
       <height>16</height>
@@ -281,7 +281,7 @@
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>310</x>
       <y>20</y>
       <width>101</width>
       <height>16</height>
@@ -316,7 +316,7 @@
    <widget class="QLineEdit" name="lineEdit_maxT">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>170</x>
       <y>40</y>
       <width>71</width>
       <height>20</height>
@@ -530,7 +530,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>170</y>
+     <y>160</y>
      <width>181</width>
      <height>16</height>
     </rect>
@@ -552,7 +552,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>170</y>
+     <y>160</y>
      <width>121</width>
      <height>22</height>
     </rect>
@@ -568,7 +568,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>0</y>
      <width>411</width>
      <height>61</height>
     </rect>
@@ -580,7 +580,7 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>30</y>
+      <y>40</y>
       <width>21</width>
       <height>21</height>
      </rect>
@@ -593,7 +593,7 @@
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>30</y>
+      <y>40</y>
       <width>21</width>
       <height>21</height>
      </rect>
@@ -606,7 +606,7 @@
     <property name="geometry">
      <rect>
       <x>55</x>
-      <y>30</y>
+      <y>40</y>
       <width>21</width>
       <height>20</height>
      </rect>
@@ -622,7 +622,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>20</y>
       <width>151</width>
       <height>20</height>
      </rect>
@@ -644,7 +644,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>10</y>
+      <y>20</y>
       <width>121</width>
       <height>17</height>
      </rect>
@@ -666,7 +666,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>10</y>
+      <y>20</y>
       <width>131</width>
       <height>17</height>
      </rect>
@@ -746,6 +746,25 @@
    </property>
    <property name="text">
     <string>8</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>190</y>
+     <width>431</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>
