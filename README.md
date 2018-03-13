@@ -127,7 +127,7 @@ This will install in your Python 3 environment all the required dependencies.
  $  sudo git clone -b qgis3 https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
-**2)** Open QGIS 3:
+**3)** Open QGIS 3:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
