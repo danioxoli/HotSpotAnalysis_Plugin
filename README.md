@@ -133,6 +133,15 @@ Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also expe
 
 The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
 
+**alternatively**
+
+**Download** the zip folder of the repository at:
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
+
+Go to `Plugins` -> `Install from ZIP`
+
+Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
+
 <!---
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
@@ -161,7 +170,7 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip of the repository folder:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
 Go to `Plugins` -> `Install from ZIP`
 
