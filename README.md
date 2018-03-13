@@ -131,7 +131,7 @@ This will install in your Python 3 environment all the required dependencies.
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
-The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
+The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
 
 **alternatively**
 
@@ -140,7 +140,7 @@ https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
 Go to `Plugins` -> `Install from ZIP`
 
-Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
+Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
 
 <!---
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
