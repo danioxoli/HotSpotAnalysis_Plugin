@@ -357,7 +357,7 @@ class HotspotAnalysis:
             if self.dlg.checkBox_gi.isChecked() == 1:
                 # Add Z-scores and p-values to their field column
                 if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                    if min(y) >= 0:
+                    if max(y) >= 0:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
@@ -366,7 +366,7 @@ class HotspotAnalysis:
 
                 else:  # to use normality hypothesis
 
-                    if min(y) >= 0:
+                    if max(y) >= 0:
                         outFeature.SetField("Z-score", statistics.Zs[i])
                         outFeature.SetField("p-value", statistics.p_norm[i] * 2)
                     else:
@@ -376,7 +376,7 @@ class HotspotAnalysis:
             else:
 
                 if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                    if min(y) >= 0:
+                    if max(y) >= 0:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
                     else:
@@ -385,7 +385,7 @@ class HotspotAnalysis:
 
                 else:  # to use normality hypothesis
 
-                    if min(y) >= 0:
+                    if max(y) >= 0:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
@@ -598,12 +598,12 @@ class HotspotAnalysis:
                 if self.dlg.checkBox_knn.isChecked() == 1:
                     weightValue = int(self.dlg.knn_number.text())
                     w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
-                    threshold1 = "None / KNN used - K = " + self.dlg.knn_number.text()
+                    threshold1 = "None/KNN used " + self.dlg.knn_number.text()
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
                 w = pysal.queen_from_shapefile(layerName.split("|")[0])
-                threshold1 = "None / Queen's Case used"
+                threshold1 = "None/Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
             else:
