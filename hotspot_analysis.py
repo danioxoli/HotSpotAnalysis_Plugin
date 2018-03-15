@@ -541,6 +541,7 @@ class HotspotAnalysis:
             return
 
         self.dlg.show()
+        self.load_comboBox()
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed and fields are not empty
