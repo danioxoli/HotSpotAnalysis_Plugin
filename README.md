@@ -116,7 +116,17 @@ To install **PySAL**:
 ```
 This will install in your Python 3 environment all the required dependencies.
 
-**2)** Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
+**2)** Open QGIS 3:
+
+Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
+
+In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
+A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
+
+
+**3)** If you are interested in the **latest unreleased version**:
+
+Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
 
 ```sh
  $ cd /usr/share/qgis/python/plugins 
@@ -127,13 +137,7 @@ This will install in your Python 3 environment all the required dependencies.
  $  sudo git clone -b qgis3 https://github.com/danioxoli/HotSpotAnalysis_Plugin
 ```
 
-**3)** Open QGIS 3:
-
-Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
-
-The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
-
-**Alternatively to 2) and 3)**
+***Alternatively***
 
 **Download** the zip folder of the repository at:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
