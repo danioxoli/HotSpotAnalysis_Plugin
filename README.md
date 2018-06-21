@@ -95,13 +95,6 @@ Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
 Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
 
-<!---
-In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
-
-**3)** If you are interested in the **latest unreleased version**:
---->
-
 ___
 ### Installation - macOS
 
@@ -128,7 +121,6 @@ Go to `Plugins` -> `Install from ZIP`
 
 Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will apear in the Vector menu.
 
---->
 ___
 
 ### Additional Material 
