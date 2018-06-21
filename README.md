@@ -25,7 +25,8 @@ These libraries are not included in the QGIS core libraries and must be installe
 
 ___
 
-**NB - dependencies installation for Windows and MacOS might not properly work because not extensively tested**
+**NB - the dependencies installation workaround for MacOS might not properly work because not extensively tested**
+
 ___
 ### Installation - Windows
 
