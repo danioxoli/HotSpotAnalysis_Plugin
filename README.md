@@ -22,99 +22,48 @@ These libraries are not included in the QGIS core libraries and must be installe
 <!---
 **Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the offcial **QGIS Python Plugins Repository**. Depending on the pre-installed Pysal version, some of the functionalities might not be available_
 --->
-<!---
+
 ___
 ### Installation - Windows OS
 
-**1)** Open `OSGeo4W Shell` as `Administrator` and type:
+**1)** Install dependencies:
+
+Open `OSGeo4W Shell` as `Administrator` and type:
 ```sh
- $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
- $ python get-pip.py
+ $ py3_env
+ $ python -m pip install --upgrade pip
+ $ python -m pip install pysal
 ```
-#### Alternatively (1):
+This will install in your QGIS3 Python 3 environment all the required dependencies.
 
-Download `get-pip.py` , to enable `PIP` functionalities, which is available at this link: <https://bootstrap.pypa.io/get-pip.py> 
-
-Open `OSGeo4W Shell` as `Administrator` and change the working directory where the `get-pip.py` file is stored and type:
-```sh
- $ python get-pip.py
-```
-Further information regarding `PIP` installation can be found in:
-- https://trac.osgeo.org/osgeo4w/wiki/ExternalPythonPackages 
-- https://packaging.python.org/en/latest/installing/#install-pip-setuptools-and-wheel
-
-**2)** Download the following packages according to your Python version and your Operating System characteristics:
- 
- `Numpy` : https://pypi.anaconda.org/carlkl/simple/numpy/ 
-
- `Scipy` : https://pypi.anaconda.org/carlkl/simple/scipy/ 
- 
-**Note**: _Default Python version for `OSGeo4W Shell` is 2.7, select the correct packages accordling to your Operating System, for example: the filename "numpy-1.10.0b1-cp27-none-win_amd64.whl" cp27, amd64 depicts python 2.7 and 64 bit Operating System_
-
-Change the directory to where the downloaded packages are stored and type the following commands:
-
-```sh
- $ pip install numpypackagename
- $ pip install scipypackagename
-```
-**Note**: extension must be included with the filename
-```sh
- $ pip install pysal
-```
-
-#### Alternatively (2):
-
-If the pysal installation with **pip** generates errors you can try with manual installation as follows: 
-
-a) Download the compressed **pysal** package at this link
-
-https://pypi.python.org/packages/e7/3b/af87cd60f03734897caa6dc3e840fc10458d0a2c060b3d71803dc56992db/PySAL-1.13.0.tar.gz
-
-The QGIS Python packages are store in this floder:
-```sh
- $ C:\PROGRA~1\QGIS2~1.14\apps\Python27\lib\site-packages
-``` 
-**Note**:  ...\QGIS2~1.14\... has to be changed according to your QGIS version
-
-b) Remove the existing folder containing **pysal**. Then, unzip the package you have downloaded; inside the uncompressed folder you will find a sub-folder called **pysal**. Copy it into the early mentioned path.
-
-**3)** Open QGIS:
+**2)** Open QGIS:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
-**4)** If you are interested in the **latest unreleased version**:
+**3)** If you are interested in the **latest unreleased version**:
 
-**Download or clone** the `GitHub` repository given below into QGIS Python Plugins folder:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/master.zip
+**Download** the zip folder of the repository at:
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
-**Note**: default Plugins folder is:
-```sh
- $ cd C:\Users\<your_user_name>\.qgis2\python\plugins
-``` 
---->
+Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
+
+Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
+
 ___
 
 ### Installation - Ubuntu
 
-**1)** Open a **Terminal** and type the commands:
-<!---
-```sh
- $ sudo apt-get install python-numpy
- $ sudo apt-get install python-scipy 
-```
-To install **PySAL**:
-```sh
- $ sudo pip install pysal
-```
---->
+**1)** Install dependencies:
+
+Open a **Terminal** and type the commands:
 
 ```sh
  $ sudo apt-get install python3-pysal
 ```
-This will install in your Python 3 environment all the required dependencies.
+This will install in your QGIS3 Python 3 environment all the required dependencies.
 
 **2)** Open QGIS 3:
 
@@ -153,7 +102,6 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 --->
 
-<!---
 ___
 ### Installation - macOS
 
