@@ -24,7 +24,7 @@ These libraries are not included in the QGIS core libraries and must be installe
 --->
 
 ___
-### Installation - Windows OS
+### Installation - Windows
 
 **1)** Install dependencies:
 
