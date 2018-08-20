@@ -32,7 +32,7 @@ ___
 
 **1)** Install dependencies:
 
-Open `OSGeo4W Shell` installed with QGIS 3 as `Administrator` and type:
+Open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
 ```sh
  $ py3_env
  $ python -m pip install --upgrade pip
