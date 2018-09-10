@@ -383,20 +383,20 @@ class HotspotAnalysis(object):
             else:
 
                 if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                    if numpy.mean(y) <= 0 :
-                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
+                    if max(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
 
                 else:  # to use normality hypothesis
 
-                    if numpy.mean(y) <= 0:
-                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
+                    if max(y) >= 0:
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                 outFeature.SetField("q-value", int(statistics.q[i]))
 
