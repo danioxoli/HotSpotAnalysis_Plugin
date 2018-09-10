@@ -364,39 +364,39 @@ class HotspotAnalysis(object):
             if self.dlg.checkBox_gi.isChecked() == 1:
                 # Add Z-scores and p-values to their field column
                 if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                    if max(y) >= 0:
+                    if min(y) >= 0:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("Z-score", - statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
 
                 else:  # to use normality hypothesis
 
-                    if max(y) >= 0:
-                        outFeature.SetField("Z-score", statistics.Zs[i])
+                    if min(y) <= 0:
+                        outFeature.SetField("Z-score", - statistics.Zs[i])
                         outFeature.SetField("p-value", statistics.p_norm[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.Zs[i])
+                        outFeature.SetField("Z-score", statistics.Zs[i])
                         outFeature.SetField("p-value", statistics.p_norm[i] * 2)
 
             else:
 
                 if self.dlg.checkBox_randomPerm.isChecked() == 1:  # to use permutation approach
-                    if max(y) >= 0:
+                    if min(y) >= 0:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("Z-score", - statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
 
                 else:  # to use normality hypothesis
 
-                    if max(y) >= 0:
-                        outFeature.SetField("Z-score", statistics.z_sim[i])
+                    if min(y) <= 0:
+                        outFeature.SetField("Z-score", - statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                 outFeature.SetField("q-value", int(statistics.q[i]))
 
