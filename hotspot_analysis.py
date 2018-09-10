@@ -380,7 +380,7 @@ class HotspotAnalysis:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
                         outFeature.SetField("p-value", statistics.p_sim[i] * 2)
 
                 else:  # to use normality hypothesis
@@ -389,7 +389,7 @@ class HotspotAnalysis:
                         outFeature.SetField("Z-score", statistics.z_sim[i])
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                     else:
-                        outFeature.SetField("Z-score", -statistics.z_sim[i])
+                        outFeature.SetField("Z-score", statistics.z_sim[i]*(-1))
                         outFeature.SetField("p-value", statistics.p_z_sim[i] * 2)
                 outFeature.SetField("q-value", statistics.q[i])
 
