@@ -23,7 +23,6 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
-
 changelog=0.5
     - Enanchemnt to Gi* computation with negative values
 #changelog=0.4
