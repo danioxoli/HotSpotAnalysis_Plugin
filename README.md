@@ -146,6 +146,10 @@ ___
 
 ### Changeset
 
+##### Changeset 10/2018
+- Enhancement to Gi* computation with negative values
+- Icon fixed
+
 ##### Changeset 03/2018
 - Plugin translation to QGIS 3 
 
