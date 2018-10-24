@@ -10,7 +10,7 @@
 name=Hotspot Analysis
 qgisMinimumVersion=2.0
 description=This plugin implements LISA statistics needed for Hotspot and Cluster Analysis
-version=0.4
+version=0.5
 author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
 email=daniele.oxoli@polimi.it
 
