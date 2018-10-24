@@ -56,6 +56,9 @@ Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
 Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
 
+**4)** PySAL common error on Windows
+
+Please, look at: https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
 ___
 
 ### Installation - Ubuntu
