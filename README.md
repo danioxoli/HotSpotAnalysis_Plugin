@@ -108,8 +108,20 @@ ___
 **1)** Install dependencies:
 
 Open a **Terminal** and type the commands:
+
 ```sh
  $ sudo pip3 install pysal 
+```
+
+***Alternative***
+
+Open a **Terminal**, update pip3, and install+update the dependencies numpy, scipy, and pysal (suggested by https://github.com/abuabara)
+
+```sh
+$ pip3 install --upgrade pip
+$ sudo -H pip3 install -U numpy
+$ sudo -H pip3 install -U scipy
+$ sudo -H pip3 install -U pysal
 ```
 
 **2)** Open QGIS:
