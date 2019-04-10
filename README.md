@@ -38,7 +38,6 @@ Open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
  $ python -m pip install --upgrade pip
  $ python -m pip install pysal
 ```
-This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3 Run ```python -m pip show pysal``` for checking it. If the installed version is higher, type ```python -m pip install -I pysal==1.14.3```
 
 **2)** Open QGIS:
 
@@ -70,7 +69,6 @@ Open a **Terminal** and type the commands:
 ```sh
  $ sudo apt-get install python3-pysal
 ```
-This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3,  Run ```aptitude versions pysal``` for checking it. If the installed version is higher, type ```apt-get install python3-pysal=1.14.3```
 
 **2)** Open QGIS 3:
 
@@ -112,7 +110,6 @@ Open a **Terminal** and type the commands:
 ```sh
  $ sudo pip3 install pysal 
 ```
-Be sure that the installed PySAL version is <= 1.14.3 Run ```pip3 show pysal``` for checking it. If the installed version is higher, type ```pip3 install -I pysal==1.14.3```
 
 ***Alternative***
 
