@@ -51,7 +51,7 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip folder of the repository at:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
 
 Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
@@ -96,7 +96,7 @@ Open a **Terminal** and change directory to QGIS Plugins directory, default is:
 ***Alternatively***
 
 **Download** the zip folder of the repository at:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
 
 Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
@@ -134,7 +134,7 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip of the repository folder:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
 
 Go to `Plugins` -> `Install from ZIP`
 
