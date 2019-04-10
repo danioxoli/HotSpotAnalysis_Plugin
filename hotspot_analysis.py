@@ -36,9 +36,9 @@ from .hotspot_analysis_dialog import HotspotAnalysisDialog
 import os.path
 
 import pysal
-from pysal.esda.getisord import *
-from pysal.esda.moran import *
-from pysal.weights.Distance import DistanceBand
+from pysal.explore.esda.getisord import *
+from pysal.explore.esda.moran import *
+from pysal.lib.weights import DistanceBand, Queen, KNN, user
 # from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
@@ -469,7 +469,7 @@ class HotspotAnalysis(object):
             self.dlg.lineEdit_minT.setEnabled(True)
             self.dlg.lineEdit_dist.setEnabled(True)
             self.dlg.lineEdit_maxT.setEnabled(True)
-            thresh = pysal.min_threshold_dist_from_shapefile(path)
+            thresh = user.min_threshold_dist_from_shapefile(path)
             self.dlg.lineEditThreshold.setText(str(int(thresh)))
 
     def error_msg(self):
@@ -597,7 +597,7 @@ class HotspotAnalysis(object):
                     dist = int(self.dlg.lineEdit_dist.text())
                     for i in range(minT, maxT + dist, dist):
                         w = DistanceBand(t, threshold=i, p=2, binary=False)
-                        moran = pysal.Moran(y, w)
+                        moran = Moran(y, w)
                         # print moran.z_norm
                         if moran.z_norm > mx_moran:
                             mx_i = i
@@ -605,12 +605,12 @@ class HotspotAnalysis(object):
                     threshold1 = int(mx_i)
                 if self.dlg.checkBox_knn.isChecked() == 1:
                     weightValue = int(self.dlg.knn_number.text())
-                    w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
+                    w = KNN.from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
                     threshold1 = "None / KNN used - K = " + self.dlg.knn_number.text()
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
-                w = pysal.queen_from_shapefile(layerName.split("|")[0])
+                w = Queen.from_shapefile(layerName.split("|")[0])
                 threshold1 = "None / Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
