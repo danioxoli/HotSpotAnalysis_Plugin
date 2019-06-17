@@ -1,6 +1,6 @@
 # Hotspot Analysis Plugin for QGIS
 
-**DEV VERSION FOR PYSAL 2.0**
+**DEV VERSION FOR PYSAL 2.0 - NB: POORLY TESTED!**
 
 A QGIS Plugin to perform Hotspot analysis based on the Python Spatial Analysis Library - [PySAL]. 
 
