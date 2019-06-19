@@ -14,7 +14,7 @@ version=0.5
 author=Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji - Politecnico Di Milano
 email=daniele.oxoli@polimi.it
 
-about=The Plugin implements Local Indicators of Spatial Association (LISA) statistics to perform the Hotspot (Getis-Ord Gi*) and Clusters (Moran's I) analysis and links them to maps. Input data must be a shapefile of points or polygons with an associated projected coordinate system and (at least) one numeric attribute. The plugin requires NumPy, SciPy and Pysal (see repository for installation instruction)
+about=The Plugin implements Local Indicators of Spatial Association (LISA) statistics to perform the Hotspot (Getis-Ord Gi*) and Clusters (Moran's I) analysis and links them to maps. Input data must be a Shapefile of points or polygons with an associated projected coordinate system and (at least) one numeric attribute. The plugin requires NumPy, SciPy and Pysal (see repository for installation instruction)
 
 tracker=https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues
 repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin.git
