@@ -30,9 +30,9 @@ ___
 
 Open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
 ```sh
- $ py3_env
- $ python -m pip install --upgrade pip
- $ python -m pip install pysal==1.14.3
+ $ py3_env.bat
+ $ python3 -m pip install --upgrade pip
+ $ python3 -m pip install pysal==1.14.3 --user 
 ```
 This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3 Run ```python -m pip show pysal``` for checking it. If the installed version is higher, type ```python -m pip install -I pysal==1.14.3```
 
@@ -58,10 +58,10 @@ Please, look at https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
 
 If QGIS does not read PySAL properly after the installation of the version 1.14.3, Open `OSGeo4W Shell` installed with QGIS3 and type:  
 ```sh
- $ py3_env
+ $ py3_env.bat
  $ qgis
 ```
-This will launch the correct QGIS environment where PySAL 1.14.3 is installed.
+This should launch the correct QGIS environment where PySAL 1.14.3 is installed.
 ___
 
 ### Installation - Ubuntu
@@ -71,7 +71,9 @@ ___
 Open a **Terminal** and type the commands:
 
 ```sh
- $ sudo apt-get install python3-pysal
+ $ sudo apt-get install python3-pysal=1.14.3 
+ (or as alternative)
+ $ sudo python3 -m pip install pysal==1.14.3 --user 
 ```
 This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3,  Run ```aptitude versions pysal``` for checking it. If the installed version is higher, type ```apt-get install python3-pysal=1.14.3```
 
