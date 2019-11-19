@@ -57,8 +57,7 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 * Please, look at https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
 
 * If the `spreg` functionalities of PySAL 1.14.3 generate import errors, go in the QGIS libraries folder at
-`C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal\spreg\utils.py`
-and comment line n. 95
+`C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal`, open the script `__init__.py` and comment line n. 95
 ___
 
 ### Installation - Ubuntu
