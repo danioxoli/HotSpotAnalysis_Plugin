@@ -54,14 +54,18 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 
 **4)** PySAL common error on Windows
 
-Please, look at https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
+* Please, look at https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
 
-If QGIS does not read PySAL properly after the installation of the version 1.14.3, Open `OSGeo4W Shell` installed with QGIS3 and type:  
+* If QGIS does not read PySAL properly after the installation of the version 1.14.3, Open `OSGeo4W Shell` installed with QGIS3 and type:  
 ```sh
  $ py3_env.bat
  $ qgis
 ```
 This should launch the correct QGIS environment where PySAL 1.14.3 is installed.
+
+* If the `spreg` functionalities of PySAL 1.14.3 generate import errors, go in the QGIS libraries folder at
+`C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal\spreg\utils.py`
+and comment line n. 95
 ___
 
 ### Installation - Ubuntu
