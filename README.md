@@ -68,8 +68,6 @@ Open a **Terminal** and type the commands:
 
 ```sh
  $ sudo apt-get install python3-pysal=1.14.3 
- (or as alternative)
- $ sudo python3 -m pip install pysal==1.14.3 --user 
 ```
 This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3,  Run ```aptitude versions pysal``` for checking it. If the installed version is higher, type ```apt-get install python3-pysal=1.14.3```
 
