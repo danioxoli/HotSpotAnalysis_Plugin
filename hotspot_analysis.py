@@ -458,7 +458,7 @@ class HotspotAnalysis(object):
             self.dlg.lineEdit_minT.setEnabled(True)
             self.dlg.lineEdit_dist.setEnabled(True)
             self.dlg.lineEdit_maxT.setEnabled(True)
-            thresh = pysal.min_threshold_dist_from_shapefile(path)
+            thresh = weights.min_threshold_dist_from_shapefile(path)
             self.dlg.lineEditThreshold.setText(str(int(thresh)))
 
     def error_msg(self):
