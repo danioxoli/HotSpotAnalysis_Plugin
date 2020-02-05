@@ -40,7 +40,6 @@ import pysal
 from pysal.explore.esda.getisord import *
 from pysal.explore.esda.moran import *
 from pysal.lib.weights.distance import DistanceBand
-# from pysal.weights.util import get_points_array_from_shapefile
 from pysal.lib import weights
 
 import numpy
