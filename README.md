@@ -1,16 +1,14 @@
 # Hotspot Analysis Plugin for QGIS
 
-**DEV VERSION FOR PYSAL 2.0 - NB: POORLY TESTED!**
+A QGIS Plugin to perform hotspot and cluster analysis based on the Python Spatial Analysis Library - [PySAL]. 
 
-A QGIS Plugin to perform Hotspot analysis based on the Python Spatial Analysis Library - [PySAL]. 
+The Hotspot analysis plugin computes **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]), Anselin Local Moran's I ([Anselin, 1995]) and Local Moran Bivariate ([Wartenberg, 1985]; [Anselin et al., 2002]) for each geometry of a shapefile, with an assigned **projected coordinate system** and (at least) an associated **numerical attribute**. Output layer allows to identify spatial hot spots/cold spots) as well as clusters/outliers in the input vector dataset. 
 
-The Hotspot analysis plugin associates the **Z-scores** and **p-values** (under Complete Spatial Randomness hypothesis) of the Gi* local statistic ([Getis and Ord, 1992]; [Getis and Ord, 1996]), Anselin Local Moran's I ([Anselin, 1995]) and Local Moran Bivariate ([Wartenberg, 1985]; [Anselin et al., 2002]) for each feature of a shapefile, with an assigned **projected coordinate system** and (at least) an associated **numerical attribute**. Output layer allows to indentify spatial hot spots/cold spots) as well as clusters/outliers for the input vector spatial dataset. 
+Concerning the Gi* local statistic, positive and statistically significant Z-scores indicate an intense cluster of high values (hotspot). Negative and statistically significant Z-scores indicate intense cluster of low values (coldspot). 
+With respect to the Local Moran's I (and its bivariate counterpart, the Local Moran Bivariate), Z-scores are translated into quadrant values (q) of the Moran Scatterplot by informing on the presence of clusters or outliers within the dataset. Significance is computed, based on user's choice, against normality assumption or using permutations approach. By default, the significance level is set to 0.05. 
+Please consider the litterature references included above for detailed information.
 
-For what it concerns Gi* local statistic, positive and statistically significant Z-score indicates intense cluster of high values (hotspot). Negative and statistically significant Z-score indicates intense cluster of low values (coldspot). 
-With respect to the Local Moran's I (and its bivariate counterpart, the Local Moran Bivariate), Z-scores are translated into quadrant values (q) which depict the presence of clusters or outliers within the dataset. Significance is computed, based on user's choice, against normality assumption or using permutations approach. 
-Please consider the aforementioned litterature references for detailed information.
-
-Spatial relationship between point features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile) or optionally using the K-nearest neighboor approach. For polygon shapefile analysis, the spatial relation is modeled using queen's case contiguity matrix. For more information, please refer to: [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
+The spatial relationship between point features is modelled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile) or optionally using the K-nearest neighbour approach. For polygon shapefile analysis, the spatial relation is modelled using a queen's case contiguity matrix. For more information, please refer to e.g.: [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
 
 <!---
 Dependency Requirements:
@@ -19,15 +17,11 @@ Dependency Requirements:
   - **`Numpy`**
   - **`Scipy`**
 
-These libraries are not included in the QGIS core libraries and must be installed prior to the use of the plugin through the [OSGeo4W Shell] on **Windows**, or through terminal on **Ubuntu** and **macOS** (see the following).
+These libraries are not included in the QGIS core libraries and must be installed prior to the use of the plugin through the [OSGeo4W Shell] on **Windows**, or through the terminal on **Ubuntu** and **macOS** (see the following).
 
 <!---
-**Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the offcial **QGIS Python Plugins Repository**. Depending on the pre-installed Pysal version, some of the functionalities might not be available_
+**Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the official **QGIS Python Plugins Repository**. Depending on the pre-installed Pysal version, some of the functionalities might not be available_
 --->
-
-___
-
-**NB - the dependencies installation for MacOS might not properly work because not extensively tested yet**
 
 ___
 ### Installation - Windows
@@ -36,10 +30,11 @@ ___
 
 Open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
 ```sh
- $ py3_env
- $ python -m pip install --upgrade pip
- $ python -m pip install pysal
+ $ py3_env.bat
+ $ python3 -m pip install --upgrade pip
+ $ python3 -m pip install pysal==1.14.3 --user 
 ```
+This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3 Run ```python -m pip show pysal``` for checking it. If the installed version is higher, type ```python -m pip install -I pysal==1.14.3```
 
 **2)** Open QGIS:
 
@@ -51,7 +46,7 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip folder of the repository at:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
 Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
@@ -59,7 +54,10 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 
 **4)** PySAL common error on Windows
 
-Please, look at: https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
+* Please, look at https://github.com/danioxoli/HotSpotAnalysis_Plugin/issues/15
+
+* If the `spreg` functionalities of PySAL 1.14.3 generate import errors, go to the QGIS libraries folder at
+`C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal`, open the script `__init__.py` and comment line n. 95
 ___
 
 ### Installation - Ubuntu
@@ -69,8 +67,9 @@ ___
 Open a **Terminal** and type the commands:
 
 ```sh
- $ sudo apt-get install python3-pysal
+ $ sudo apt-get install python3-pysal=1.14.3 
 ```
+This will install in your QGIS3 Python 3 environment all the required dependencies. Be sure that the installed PySAL version is <= 1.14.3,  Run ```aptitude versions pysal``` for checking it. If the installed version is higher, type ```apt-get install python3-pysal=1.14.3```
 
 **2)** Open QGIS 3:
 
@@ -96,7 +95,7 @@ Open a **Terminal** and change directory to QGIS Plugins directory, default is:
 ***Alternatively***
 
 **Download** the zip folder of the repository at:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
 Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
@@ -110,8 +109,9 @@ ___
 Open a **Terminal** and type the commands:
 
 ```sh
- $ sudo pip3 install pysal 
+ $ sudo pip3 install pysal==1.14.3
 ```
+Be sure that the installed PySAL version is <= 1.14.3 Run ```pip3 show pysal``` for checking it. If the installed version is higher, type ```pip3 install -I pysal==1.14.3```
 
 ***Alternative***
 
@@ -121,7 +121,7 @@ Open a **Terminal**, update pip3, and install+update the dependencies numpy, sci
 $ pip3 install --upgrade pip
 $ sudo -H pip3 install -U numpy
 $ sudo -H pip3 install -U scipy
-$ sudo -H pip3 install -U pysal
+$ sudo -H pip3 install -U pysal==1.14.3
 ```
 
 **2)** Open QGIS:
@@ -134,7 +134,7 @@ A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Ve
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip of the repository folder:
-https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
+https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3.zip
 
 Go to `Plugins` -> `Install from ZIP`
 
@@ -144,7 +144,7 @@ ___
 
 ### Additional Material 
 
-An user guide with demo exercises is included here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
+A user guide with demo exercises is included here: https://github.com/danioxoli/HotSpotAnalysis_Plugin/blob/master/test_data/Hotspot_Analysis_UserGuide.pdf
 
 Plese cite this as: 
 
@@ -152,7 +152,7 @@ _Oxoli, D., Prestifilippo, G., Bertocchi, D., Zurbaràn, M. (2017). Enabling spa
 
 Latest presentation available here: http://www.slideshare.net/danieleoxoli/hotspot-analysis-with-qgis-foss4git-2017
 
-**Note**: part of this material might be based on the **old version of the plugin**! 
+**Note**: most of this material is be based on **old versions of the plugin**! 
 
 ___
 
