@@ -7,6 +7,7 @@
                              -------------------
         begin                : 2017-02-22
         copyright            : (C) 2017 by Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
+        copyright            : (C) 2020 by Paolo Zatelli, University of Trento, porting to PySAL 2.0.0
         email                : daniele.oxoli@polimi.it
         git sha              : $Format:%H$
  ***************************************************************************/
@@ -36,10 +37,12 @@ from .hotspot_analysis_dialog import HotspotAnalysisDialog
 import os.path
 
 import pysal
-from pysal.esda.getisord import *
-from pysal.esda.moran import *
-from pysal.weights.Distance import DistanceBand
+from pysal.explore.esda.getisord import *
+from pysal.explore.esda.moran import *
+from pysal.lib.weights.distance import DistanceBand
 # from pysal.weights.util import get_points_array_from_shapefile
+from pysal.lib import weights
+
 import numpy
 import sys
 
@@ -610,7 +613,7 @@ class HotspotAnalysis(object):
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
-                w = pysal.queen_from_shapefile(layerName.split("|")[0])
+                w = weights.Queen.from_shapefile(layerName.split("|")[0])
                 threshold1 = "None / Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
