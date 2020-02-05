@@ -7,7 +7,7 @@
                              -------------------
         begin                : 2017-02-22
         copyright            : (C) 2017 by Daniele Oxoli, Gabriele Prestifilippo, Mayra Zurbaràn, Stanly Shaji / Politecnico Di Milano
-        copyright            : (C) 2020 by Paolo Zatelli, University of Trento, porting to PySAL 2.0.0
+        copyright            : Porting to PySAL 2.0.0 - (C) 2020 by Paolo Zatelli, University of Trento 
         email                : daniele.oxoli@polimi.it
         git sha              : $Format:%H$
  ***************************************************************************/
