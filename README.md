@@ -49,6 +49,7 @@ Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also expe
 In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
+
 **3)** If you are interested in the **latest unreleased version**:
 
 **Download** the zip folder of the repository at:
@@ -76,18 +77,18 @@ Open a **Terminal** and type the commands:
  $ cd .../path to pysal-2.0.0 uncompressed folder
  $ python3 setup.py install
 ```
-
+<!---
 **2)** Open QGIS 3:
 
 Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
 
 In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
+-->
 
-
-**3)** If you are interested in the **latest unreleased version**:
-
-Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
+**2)** If you are interested in the **latest unreleased version**:
+-->
+**2) Open a **Terminal** and change directory to QGIS Plugins directory, default is: 
 
 ```sh
  $ cd /usr/share/qgis/python/plugins 
