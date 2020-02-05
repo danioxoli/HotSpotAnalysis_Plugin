@@ -66,10 +66,14 @@ ___
 
 **1)** Install dependencies:
 
+download and uncompress this package:
+http://deb.debian.org/debian/pool/main/p/pysal/pysal_2.0.0.orig.tar.gz
+
 Open a **Terminal** and type the commands:
 
 ```sh
- $ sudo apt-get install python3-pysal
+ $ cd .../path to pysal-2.0.0 uncompressed folder
+ $ python3 setup.py install
 ```
 
 **2)** Open QGIS 3:
