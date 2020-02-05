@@ -36,9 +36,9 @@ from .hotspot_analysis_dialog import HotspotAnalysisDialog
 import os.path
 
 import pysal
-from pysal.explore.esda.getisord import *
-from pysal.explore.esda.moran import *
-from pysal.lib.weights import DistanceBand, Queen, KNN, user
+from pysal.esda.getisord import *
+from pysal.esda.moran import *
+from pysal.weights.Distance import DistanceBand
 # from pysal.weights.util import get_points_array_from_shapefile
 import numpy
 import sys
@@ -64,7 +64,6 @@ class HotspotAnalysis(object):
 
     def __init__(self, iface):
         """Constructor.
-
         :param iface: An interface instance that will be passed to this class
             which provides the hook by which you can manipulate the QGIS
             application at run time.
@@ -105,12 +104,9 @@ class HotspotAnalysis(object):
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
         """Get the translation for a string using Qt translation API.
-
         We implement this ourselves since we do not inherit QObject.
-
         :param message: String for translation.
         :type message: str, QString
-
         :returns: Translated version of message.
         :rtype: QString
         """
@@ -129,39 +125,29 @@ class HotspotAnalysis(object):
             whats_this=None,
             parent=None):
         """Add a toolbar icon to the toolbar.
-
         :param icon_path: Path to the icon for this action. Can be a resource
             path (e.g. ':/plugins/foo/bar.png') or a normal file system path.
         :type icon_path: str
-
         :param text: Text that should be shown in menu items for this action.
         :type text: str
-
         :param callback: Function to be called when the action is triggered.
         :type callback: function
-
         :param enabled_flag: A flag indicating if the action should be enabled
             by default. Defaults to True.
         :type enabled_flag: bool
-
         :param add_to_menu: Flag indicating whether the action should also
             be added to the menu. Defaults to True.
         :type add_to_menu: bool
-
         :param add_to_toolbar: Flag indicating whether the action should also
             be added to the toolbar. Defaults to True.
         :type add_to_toolbar: bool
-
         :param status_tip: Optional text to show in a popup when mouse pointer
             hovers over the action.
         :type status_tip: str
-
         :param parent: Parent widget for the new action. Defaults None.
         :type parent: QWidget
-
         :param whats_this: Optional text to show in the status bar when the
             mouse pointer hovers over the action.
-
         :returns: The action that was created. Note that the action is also
             added to self.actions list.
         :rtype: QAction
@@ -469,7 +455,7 @@ class HotspotAnalysis(object):
             self.dlg.lineEdit_minT.setEnabled(True)
             self.dlg.lineEdit_dist.setEnabled(True)
             self.dlg.lineEdit_maxT.setEnabled(True)
-            thresh = user.min_threshold_dist_from_shapefile(path)
+            thresh = pysal.min_threshold_dist_from_shapefile(path)
             self.dlg.lineEditThreshold.setText(str(int(thresh)))
 
     def error_msg(self):
@@ -597,7 +583,7 @@ class HotspotAnalysis(object):
                     dist = int(self.dlg.lineEdit_dist.text())
                     for i in range(minT, maxT + dist, dist):
                         w = DistanceBand(t, threshold=i, p=2, binary=False)
-                        moran = Moran(y, w)
+                        moran = pysal.Moran(y, w)
                         # print moran.z_norm
                         if moran.z_norm > mx_moran:
                             mx_i = i
@@ -605,12 +591,12 @@ class HotspotAnalysis(object):
                     threshold1 = int(mx_i)
                 if self.dlg.checkBox_knn.isChecked() == 1:
                     weightValue = int(self.dlg.knn_number.text())
-                    w = KNN.from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
+                    w = pysal.knnW_from_shapefile(layerName.split("|")[0], k=weightValue, p=1)
                     threshold1 = "None / KNN used - K = " + self.dlg.knn_number.text()
                 else:
                     w = DistanceBand(t, threshold1, p=2, binary=False)
             else:  # polygon
-                w = Queen.from_shapefile(layerName.split("|")[0])
+                w = pysal.queen_from_shapefile(layerName.split("|")[0])
                 threshold1 = "None / Queen's Case used"
             if self.dlg.checkBox_rowStandard.isChecked() == 1:
                 type_w = "R"
