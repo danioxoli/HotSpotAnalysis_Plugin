@@ -23,9 +23,11 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
-changelog=1.0.2
-    - Enhancement to Gi* computation with negative values
-    - Icon fixed
+changelog=1.0.3
+    - Port to PySAL 2
+#changelog=1.0.2
+#    - Enhancement to Gi* computation with negative values
+#    - Icon fixed
 #changelog=1.0.1
 #    - QGIS 3 plugin version 
 #    - Minor bugs fixed 
