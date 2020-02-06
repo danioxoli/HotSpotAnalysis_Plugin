@@ -24,7 +24,7 @@ repository=https://github.com/danioxoli/HotSpotAnalysis_Plugin
 
 # Uncomment the following line and add your changelog:
 changelog=1.0.3
-    - code cleaning
+     - code cleaning
 #changelog=1.0.2
 #    - Enhancement to Gi* computation with negative values
 #    - Icon fixed
