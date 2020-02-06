@@ -39,7 +39,7 @@ Open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
 ```sh
  $ py3_env
  $ python -m pip install --upgrade pip
- $ python -m pip install pysal
+ $ python -m pip install pysal=2.0.0
 ```
 
 **2)** Open QGIS:
