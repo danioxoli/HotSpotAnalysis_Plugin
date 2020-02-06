@@ -170,6 +170,9 @@ ___
 
 ### Changeset
 
+##### Changeset 02/2019
+- Port to PySAL 2
+
 ##### Changeset 10/2018
 - Enhancement to Gi* computation with negative values
 - Icon fixed
