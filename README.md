@@ -117,34 +117,8 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 ___
 ### Installation - macOS
 
-**1)** Install dependencies:
+**1)** PySAL 2 is included in the core libraries, no dependencies installation required
 
-Open a **Terminal** and type the commands:
-
-```sh
- $ sudo pip3 install pysal 
-```
-
-***Alternative***
-
-Open a **Terminal**, update pip3, and install+update the dependencies numpy, scipy, and pysal (suggested by https://github.com/abuabara)
-
-```sh
-$ pip3 install --upgrade pip
-$ sudo -H pip3 install -U numpy
-$ sudo -H pip3 install -U scipy
-$ sudo -H pip3 install -U pysal
-```
-<!---
-**2)** Open QGIS:
-
-Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also experimental plugins` 
-
-In `All plugins` tab, look for `Hotspot Analysis` and tick the Checkbox.  
-A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
-
-**3)** If you are interested in the **latest unreleased version**:
---->
 **2)** Download the zip of the repository folder:
 https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
 
