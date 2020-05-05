@@ -144,7 +144,7 @@ ___
 
 ### Changeset
 
-##### Changeset 02/2019
+##### Changeset 02/2020
 - Port to PySAL 2
 
 ##### Changeset 10/2018
