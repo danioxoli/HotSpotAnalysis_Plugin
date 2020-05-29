@@ -2,7 +2,7 @@
 
 **DEV VERSION FOR PYSAL 2.0 - NB: POORLY TESTED!**
 
-**Instruction in this README are under development** 
+**Instructions on this README are under development** 
 
 A QGIS Plugin to perform Hotspot analysis based on the Python Spatial Analysis Library - [PySAL]. 
 
