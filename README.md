@@ -51,12 +51,6 @@ Go to `Plugins` -> `Manage and Install plugins` -> `Settings` -> `Show also expe
 In `All plugins` tab, look for `Hotspot Analysis` and tick the checkbox.  
 A new icon for Hotspot Analysis will appear on the QGIS main panel and in the Vector Menu.
 
-In case of errors rising from the Scipy package, open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
-```sh
- $ py3_env
- $ python -m pip install scipy -U
-```
-
 **3)** If you are interested in the **latest unreleased version**:
 --->
 
@@ -66,6 +60,12 @@ https://github.com/danioxoli/HotSpotAnalysis_Plugin/archive/qgis3pysal2.zip
 Open QGIS 3 and go to `Plugins` -> `Install from ZIP`
 
 Select the downloaded zip folder and press `Install plugin`. The icon for the Hotspot Analysis plugin will appear in the list of the installed plugins. Tick the Checkbox to activate it. The plugin will appear in the Vector menu.
+
+In case of errors rising from the Scipy package, open `OSGeo4W Shell` installed with QGIS3 as `Administrator` and type:
+```sh
+ $ py3_env
+ $ python -m pip install scipy -U
+```
 
 <!---
 **4)** PySAL common error on Windows
