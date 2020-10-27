@@ -12,7 +12,7 @@ For what it concerns Gi* local statistic, positive and statistically significant
 With respect to the Local Moran's I (and its bivariate counterpart, the Local Moran Bivariate), Z-scores are translated into quadrant values (q) which depict the presence of clusters or outliers within the dataset. Significance is computed, based on user's choice, against normality assumption or using random permutations. 
 Please consider the aforementioned litterature references for detailed information.
 
-Spatial relationship between point features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile) or optionally using the K-nearest neighboor approach. For polygon shapefile analysis, the spatial relation is modeled using queen's case contiguity matrix. For more information, please refer to [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
+Spatial relationship between point features is modeled using a Fixed Distance Band (expressed with the same unit of measure of the projected coordinate system of the input point shapefile) or optionally using the  K-nearest neighbours approach. For polygon shapefile analysis, the spatial relation is modelled using a 1st order queen's case contiguity matrix. For more information, please refer to [Geospatial Analysis - 5th Edition, 2015 - de Smith, Goodchild, Longley]
 
 <!---
 Dependency Requirements:
