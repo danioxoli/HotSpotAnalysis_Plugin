@@ -25,12 +25,10 @@ These libraries are not included in the QGIS core libraries and must be installe
 
 <!---
 **Note**:_If you are using the [OSGeo-Live] Virtual Machine, you do not need to install any dependency. You can simply install the plugin from the offcial **QGIS Python Plugins Repository**. Depending on the pre-installed Pysal version, some of the functionalities might not be available_
---->
-
 ___
-<!---
+
 **NB - the dependencies installation for MacOS might not properly work because not extensively tested yet**
-<!---
+--->
 ___
 ### Installation - Windows
 
