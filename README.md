@@ -59,7 +59,7 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 * If the `spreg` functionalities of PySAL 1.14.3 generate import errors, go to the QGIS libraries folder at
 `C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal`, open the script `__init__.py` and comment line n. 95
 
-* A video tutorial explaining Windows installation is available on [here]
+* A **video tutorial** for installation on Windows is available on [here]
 ___
 
 ### Installation - Ubuntu
