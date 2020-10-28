@@ -58,6 +58,8 @@ Select the downloaded zip folder and press `Install plugin`. The icon for the Ho
 
 * If the `spreg` functionalities of PySAL 1.14.3 generate import errors, go to the QGIS libraries folder at
 `C:\Users\user\AppData\Roaming\Python\Python37\site-packages\pysal`, open the script `__init__.py` and comment line n. 95
+
+* A video tutorial explaining Windows installation is available on [here]
 ___
 
 ### Installation - Ubuntu
@@ -221,3 +223,5 @@ E-mail: daniele.oxoli@polimi.it
  [Anselin, 1995]: <http://onlinelibrary.wiley.com/store/10.1111/j.1538-4632.1995.tb00338.x/asset/j.1538-4632.1995.tb00338.x.pdf;jsessionid=A8B95BCA3E3DAFED243732CC66B31B63.f02t01?v=1&t=j0hvb8t7&s=c3f30861dca953c035e5b1dbbc24ea6b659a82c5>
  [Wartenberg, 1985]:<http://onlinelibrary.wiley.com/store/10.1111/j.1538-4632.1985.tb00849.x/asset/j.1538-4632.1985.tb00849.x.pdf?v=1&t=j0uyit1b&s=7ad70b665f08164ec74068d58eedf6f65e072dfa>
  [Anselin et al., 2002]:<https://pdfs.semanticscholar.org/4e34/bd70317377971ba8df7259288b972ad6a239.pdf>
+ [here]:<https://www.youtube.com/watch?v=lnDkbdKKJXM&ab_channel=AMDGS>
+ 
